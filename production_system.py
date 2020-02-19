@@ -215,7 +215,7 @@ class ProductionSystem:
                         self.state[i] = self.decision_epoch_interval
 
                 self.previous_state = np.array(
-                    self.state) / (1 - self.weighted_average_beta ** np.array(self.state_element_number_updates))
+                    self.state, dtype=np.float32) / (1 - self.weighted_average_beta ** np.array(self.state_element_number_updates, dtype=np.float32))
                 
                 self.previous_state = np.reshape(self.previous_state, (1, -1))
                 # print(self.previous_state)

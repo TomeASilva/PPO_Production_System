@@ -57,10 +57,10 @@ class EpBuffer:
 
         states, actions, next_states, rewards = zip(*self.memory)
         qsa = self.compute_Qsa(rewards, gamma)
-        states = np.asarray(states)
-        actions = np.asarray(actions).reshape(-1, 1)
+        states = np.asarray(states, dtype=np.float32)
+        actions = np.asarray(actions, dtype=np.float32).reshape(-1, 1)
         next_states = np.asarray(next_states)
-        rewards = np.asarray(rewards)
+        rewards = np.asarray(rewards, dtype=np.float32)
         qsa = np.asarray(qsa, dtype=np.float32).reshape(-1, 1)
 
         # print(f"States: {states.shape}")

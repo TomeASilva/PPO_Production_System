@@ -99,7 +99,7 @@ class PPO(BasePolicy):
         self.number_action_calls = 0
     def build_models(self):
 
-        self.input = keras.Input(shape=(self.input_layer_size), name="state")
+        self.input = keras.Input(shape=(self.input_layer_size), name="state", dtype=tf.float32)
         self.trunk = build_networks(**self.trunk_config, input=self.input)
         mu_head = build_networks(**self.mu_head_config, input=self.trunk)
         cov_head = build_networks(**self.cov_head_config, input=self.trunk)
@@ -541,7 +541,7 @@ class GlobalAgent(Agent):
                 if self.number_optimization_cycles % 1 == 0:
                     rewards_volatile = []
                     for i in range (1):
-                        path_twin, path_PPO = self.collect_episodes(1, True, True)
+                        path_twin, path_PPO = self.collect_episodes(1, True, False)
                         
                         print("--------------PPO Policy---------------")
                         summarize_performance(path_PPO)
@@ -582,7 +582,7 @@ class GlobalAgent(Agent):
                 writer.writerow(["Run", self.number_episodes_run_upuntil])
             rewards_volatile = []
             for i in range (1):
-                path_twin, path_PPO = self.collect_episodes(1, True, True)
+                path_twin, path_PPO = self.collect_episodes(1, True, False)
                 
                 print("--------------PPO Policy---------------")
                 summarize_performance(path_PPO)
@@ -605,7 +605,7 @@ class GlobalAgent(Agent):
         except KeyboardInterrupt:
             rewards_volatile = []
             for i in range (1):
-                path_twin, path_PPO = self.collect_episodes(1, True, True)
+                path_twin, path_PPO = self.collect_episodes(1, True, False)
                 
                 print("--------------PPO Policy---------------")
                 summarize_performance(path_PPO)
@@ -825,7 +825,7 @@ hyperparameters = {"ppo_networks_configuration" : ppo_networks_configuration,
                     "gradient_clipping_critic": 0.5, 
                     "gradient_steps_per_episode": 120,
                     "epsilon": 0.2,
-                    "number_episodes_worker": 40
+                    "number_episodes_worker": 80
                     }
     
 agent_config = {
