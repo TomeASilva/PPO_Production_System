@@ -196,6 +196,9 @@ class PPO(BasePolicy):
         self.number_action_calls += 1
         return int(action)
 
+    def get_state_value(self, state):
+        state_value = self.critic(state)
+        return float(state_value)
 
 class RandomPolicy(BasePolicy):
 
@@ -258,7 +261,7 @@ class Agent:
         self.total_number_episodes = total_number_episodes  # Total number of episodes to be run
         self.episode_queue = episode_queue
         self.warm_up_length = warm_up_length
-        self.run_length = run_length
+        self.run_length= run_length
         self.ppo_networks_configuration = ppo_networks_configuration
         self.gamma = gamma
         self.action_range = action_range
@@ -295,7 +298,8 @@ class Agent:
                              use_seeds=True,
                              files=files,
                              random_seeds= random_seeds,
-                             logging=logging
+                             logging=logging,
+                             run_length=self.run_length
                              
                              )
             production_system_2 = ProductionSystem(env=env,
@@ -307,7 +311,8 @@ class Agent:
                                                    use_seeds=True,
                                                    files=files,
                                                    random_seeds=random_seeds,
-                                                   logging=logging
+                                                   logging=logging,
+                                                   run_length=self.run_length
                                                   )
 
         env.run(until=self.warm_up_length + self.run_length)
@@ -500,13 +505,20 @@ class GlobalAgent(Agent):
                     #---START Aplly Critic Gradients
                     self.critic_optimizer.apply_gradients(zip(critic_gradient, self.PPO.variables["critic"]))
                     #---
-                    
+                    #---START Observe the value of given state to see convergence
+                    state = np.array([10, 3, 1, 0.80, 0.50, 18, 15])
+                    value = self.state_value(state.reshape(1, -1))
+                    value = float(value.numpy()[0])
+                
+                    if self.record_statistics:
+                        with self.writer.as_default():
+                            tf.summary.scalar(f"State_value", value, self.number_of_gradient_descent_steps)
+                    #---END Observe the value of given state to see convergence
                     self.number_of_gradient_descent_steps += 1
                 #---END gradient descent for critic
                 
                 
                 
-                index_last_layer = len(self.PPO.actor_cov.layers) - 1 #find the index of the last layer 
                 
                 #---START update self.current_parameter with the parameters resulting from n steps of gradient descent
                 self.current_parameters = {"mu": [variable.numpy() for variable in self.PPO.actor_mu.trainable_variables],
@@ -527,16 +539,7 @@ class GlobalAgent(Agent):
                 
                 self.number_optimization_cycles += 1
                 
-                #---START Observe the value of given state to see convergence
-                state = np.array([10, 3, 1, 0.80, 0.50, 18, 15])
-                value = self.state_value(state.reshape(1, -1))
-                value = float(value.numpy()[0])
-            
-                if self.record_statistics:
-                    with self.writer.as_default():
-                        tf.summary.scalar(f"State_value", value, self.number_optimization_cycles)
-                #---END Observe the value of given state to see convergence
-                
+               
                 #---START after n iterations RUN EPISODE and PRINT REWARD
                 if self.number_optimization_cycles % 1 == 0:
                     rewards_volatile = []
@@ -634,11 +637,31 @@ class GlobalAgent(Agent):
         with tf.GradientTape(persistent=True) as tape:
             #---START Actor gradient calculation
             #---START Get the parameters for the Normal dist
+            # tf.print("Actions")
+            # for value in actions:
+            #     tf.print(value)
+
             mu = self.PPO.actor_mu(states)
+            # tf.print("mu")
+            # for value in(mu):
+            #     tf.print(value)
+                
             cov = self.PPO.actor_cov(states)
+            # tf.print("cov")
+            # for value in(cov):
+            #     tf.print(value)
+                
             mu_old = tf.stop_gradient(self.PPO.actor_mu_old(states))
             cov_old = tf.stop_gradient(self.PPO.actor_cov_old(states))
             
+            # tf.print("mu_old")
+            # for value in(mu_old):
+            #     tf.print(value)
+              
+            
+            # tf.print("cov_old")
+            # for value in(cov_old):
+            #     tf.print(value)
             #---END Get the parameters for the Normal dist
             #---START Advantage function computation and normalization
             advantage_function = Qsa - self.PPO.critic(states)
@@ -656,25 +679,47 @@ class GlobalAgent(Agent):
             
             #---
             #---START compute the probability of the actions taken at the current episode
-            log_probs = self.probability_density_func.log_prob(actions)
-            log_probs_old = tf.stop_gradient(self.probability_density_func_old.log_prob(actions))
+            probs = self.probability_density_func.prob(actions)
+            
+            # tf.print("probs")
+            # for value in(probs):
+            #     tf.print(value)
+                
+            probs_old = tf.stop_gradient(self.probability_density_func_old.prob(actions))
+            
+            # tf.print("probs_old")
+            # for value in(probs_old):
+            #     tf.print(value)
             #---END compute the probability of the actions taken at the current episode
             #---START Ensemble Actor loss function
-            self.probability_ratio = tf.math.exp(log_probs - log_probs_old)
+            self.probability_ratio = tf.math.divide(probs + 1e-5, probs_old + 1e-5)
+
+            # tf.print("probability ratio")
+            
+            # for value in (self.probability_ratio):
+            #     tf.print(value) 
+                
             cpi = tf.math.multiply(self.probability_ratio, tf.stop_gradient(advantage_function))
             clip = tf.math.minimum(cpi, tf.multiply(tf.clip_by_value(self.probability_ratio, 1 - self.epsilon, 1 + self.epsilon), tf.stop_gradient(advantage_function)))
-            actor_loss = -tf.reduce_mean(clip) - entropy
+            actor_loss = -tf.reduce_mean(clip) - entropy_average * self.entropy
+            # tf.print("Actor_loss", actor_loss)
             #---END Ensemble Actor loss function
         
         #---START Compute gradients for average
         gradients_mu = tape.gradient(actor_loss, self.PPO.actor_mu.trainable_variables)
         #---
-        
+        # tf.print("gradients_mu")
+        # for value in gradients_mu:
+        #     tf.print(value)
         #---START Compute gradients for the covariance
 
         gradients_cov = tape.gradient(actor_loss, self.PPO.cov_head_variables)
         # END Compute gradients for the covariance
         
+        # tf.print("cov")
+        # for value in gradients_cov:
+        #     tf.print(cov)
+            
         gradients = {"mu": gradients_mu,
                      "cov": gradients_cov,}
         #---END Actor gradient calculation
@@ -747,12 +792,14 @@ class WorkerAgent(Agent):
     
     def training_loop(self):
          # ---START build NETworks for critic and actor
+        if self.record_statistics:
+            self.writer = tf.summary.create_file_writer(f"./summaries/global/{datetime.datetime.now().strftime('%Y%m%d-%H%M%S')}_{self.name}")
+        
         self.FixedPolicy = FixedPolicy(self.conwip, self.action_range)
-        self.PPO = PPO(**ppo_networks_configuration, action_range=self.action_range, agent_name=self.name)
+        self.PPO = PPO(**ppo_networks_configuration, action_range=self.action_range, agent_name=self.name,summary_writer=self.writer)
         self.PPO.build_models() #build models (Critic, Actor Networks)
         # ---
 
-            
         
         while self.current_number_episodes.value < self.total_number_episodes:
             self.number_episodes_run_upuntil = self.current_number_episodes.value
@@ -805,12 +852,12 @@ production_system_configuration = {
     }
 
 ppo_networks_configuration = {"trunk_config": {"layer_sizes": [100, 100],
-                                      "activations": ["relu", "relu"]},
+                                      "activations": [tf.nn.leaky_relu, tf.nn.leaky_relu]},
 
                      "mu_head_config": {"layer_sizes": [64, 32, 1],
-                                        "activations": ["relu", "relu", "relu"]},
+                                        "activations": [tf.nn.leaky_relu, tf.nn.leaky_relu, "softplus"]},
                      "cov_head_config": {"layer_sizes": [64, 32, 1],
-                                        "activations": ["relu", "relu", "relu"]},
+                                        "activations": [tf.nn.leaky_relu, tf.nn.leaky_relu, "softplus"]},
                      "critic_net_config": {"layer_sizes": [100, 64, 1],
                                             "activations": ["relu", "relu", "linear"]},
                      "input_layer_size": 7
@@ -821,16 +868,16 @@ hyperparameters = {"ppo_networks_configuration" : ppo_networks_configuration,
                     "critic_optimizer": tf.keras.optimizers.Adam(learning_rate=0.0001),
                     "entropy":0.09,
                     "gamma":0.999,
-                    "gradient_clipping_actor": 0.5, 
-                    "gradient_clipping_critic": 0.5, 
+                    "gradient_clipping_actor": 0.08, 
+                    "gradient_clipping_critic": 0.08, 
                     "gradient_steps_per_episode": 120,
                     "epsilon": 0.2,
-                    "number_episodes_worker": 80
+                    "number_episodes_worker": 40
                     }
     
 agent_config = {
     "action_range": (0, 100),
-    "total_number_episodes" : 5000,
+    "total_number_episodes" : 10000,
     "conwip": 10000,
     "warm_up_length": 100,
     "run_length": 3000

@@ -67,12 +67,13 @@ class Machine:
 
 class ProductionSystem:
 
-    def __init__(self, env, processing_time_range, initial_wip_cap, decision_epoch_interval, track_state_interval, warmup_time, policy, ep_buffer, random_seeds=(1, 2, 4), files=False, use_seeds=False, twin_system=None, logging = False):
+    def __init__(self, env, processing_time_range, initial_wip_cap, decision_epoch_interval, track_state_interval, warmup_time, run_length, policy, ep_buffer, random_seeds=(1, 2, 4), files=False, use_seeds=False, twin_system=None, logging = False):
         if not logging:
             logger.disabled = True
             loggerTwin.disabled = True
             logger_state.disabled = True
         self.warmup_time = warmup_time
+        self.run_length = run_length
         self.policy = policy
         self.ep_buffer = ep_buffer
         self.random_seeds = random_seeds
@@ -222,8 +223,7 @@ class ProductionSystem:
                 # We should pass an array to action, so that we get Wip as an integer
                 self.action = self.policy.get_action(self.previous_state) #int
 
-                self.reward = self.compute_reward(  
-                    self.previous_state, self.action) #int
+               
 
                 self.wip_cap = self.action # int
 
@@ -238,15 +238,23 @@ class ProductionSystem:
                         self.state_element_number_updates[i] = 1
                         self.state[i] = self.decision_epoch_interval
 
-                state = np.array(self.state) / (1 - self.weighted_average_beta **
-                                                     np.array(self.state_element_number_updates))
-                
+                self.next_state = np.array(self.state, dtype=np.float32) / (1 - self.weighted_average_beta **
+                                                    np.array(self.state_element_number_updates, dtype=np.float32))
+                self.next_state = np.reshape(self.next_state, (1, -1))
                 
                 # self.reward = self.compute_reward(state, self.action)
                 if self.twin_system != None:
+                   
+                    
+                    self.reward = self.compute_reward(self.next_state, self.action) #int
+                    
+                    # if self.env.now + self.decision_epoch_interval > self.run_length:
+                        
+                        
+                    #     self.reward += self.policy.get_state_value(self.previous_state)
 
                     sample = (self.previous_state.reshape(self.previous_state.shape[1],), 
-                        np.array(self.action), state,    self.reward)
+                        np.array(self.action), self.next_state.reshape(self.next_state.shape[1],), self.reward)
                     # sample = list(itertools.chain(*sample))
                     self.ep_buffer.add_transition(sample)
 
@@ -369,14 +377,14 @@ class ProductionSystem:
         # Only compute competition based reward signal for RL Agent    
         if self.twin_system != None:
             logger_state.debug(f"State: {state}")
-            logger_state.debug(f"Twin state : {self.twin_system.previous_state}")           
+            logger_state.debug(f"Twin state : {self.twin_system.next_state}")           
             # Check for the bottlenec of the twin system
-            bottleneck_station_twin = np.argmax(np.array([self.twin_system.previous_state[0, 5], self.twin_system.previous_state[0, 6]]))
+            bottleneck_station_twin = np.argmax(np.array([self.twin_system.next_state[0, 5], self.twin_system.next_state[0, 6]]))
             # Find the utilization of the bottleneck of the twin system
             if bottleneck_station_twin == 0:
-                u_twin = self.twin_system.previous_state[0, 3] 
+                u_twin = self.twin_system.next_state[0, 3] 
             if bottleneck_station_twin == 1:
-                u_twin = self.twin_system.previous_state[0, 4]
+                u_twin = self.twin_system.next_state[0, 4]
             #if Utilization is higher than utilization of the twin and WIP is lower (best case scenario)
             
             logger_state.debug(f"U system: {u}")
@@ -384,28 +392,28 @@ class ProductionSystem:
 
             
             
-            if u >= u_twin and state[0, 0] < self.twin_system.previous_state[0, 0]:
+            if u >= u_twin and state[0, 0] < self.twin_system.next_state[0, 0]:
                 # Reward is proportional to how better u is, and how much lower wip is
                 reward = (u - u_twin) + \
-                    (self.twin_system.previous_state[0, 0] - state[0, 0])
+                    (self.twin_system.next_state[0, 0] - state[0, 0])
             #if Utilization is higher but wip is also higher
             elif u >= u_twin:
                 #Reward porpotional to the the system that was the better ratio u/wip
-                reward = (u/(state[0, 0] + 1e-8)) - (u_twin/(self.twin_system.previous_state[0, 0] + 1e-8))
-          
+                # reward = (u/(state[0, 0] + 1e-8)) - (u_twin/(self.twin_system.next_state[0, 0] + 1e-8))
+                reward = -100    
             else:
                 #if utilization is lower and wip also lower
-                if u < u_twin and state[0, 0] < self.twin_system.previous_state[0, 0]:
+                if u < u_twin and state[0, 0] < self.twin_system.next_state[0, 0]:
                     #Reward porpotional to the the system that was the better ratio u/wip
-                    reward = (u/(state[0, 0] + 1e-8)) - (u_twin/(self.twin_system.previous_state[0, 0] + 1e-8))
-
+                    # reward = (u/(state[0, 0] + 1e-8)) - (u_twin/(self.twin_system.next_state[0, 0] + 1e-8))
+                    reward = -100
                 #if utilization is lower and wip is higher (worst case scenario)
-                elif u < u_twin and state[0, 0] >= self.twin_system.previous_state[0, 0]:
+                elif u < u_twin and state[0, 0] >= self.twin_system.next_state[0, 0]:
                     # the greater the difference in utilization the more negative will the reward be
                     # the greater the difference in wip between twin and state the more negative will the reward be
-                    reward = (u - u_twin) + \
-                        (self.twin_system.previous_state[0, 0] - state[0, 0])
-
+                    # reward = (u - u_twin) + \
+                        # (self.twin_system.next_state[0, 0] - state[0, 0])
+                    reward = -100
             # wip_twin = self.twin_system.state[0, 0]
             # reward = u - (self.twin_system.previous_state[0, 0] - state[0, 0])
             # reward = reward + (self.parts_produced - self.twin_system.parts_produced)
