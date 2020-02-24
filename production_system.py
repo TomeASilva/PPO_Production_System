@@ -400,20 +400,20 @@ class ProductionSystem:
             elif u >= u_twin:
                 #Reward porpotional to the the system that was the better ratio u/wip
                 # reward = (u/(state[0, 0] + 1e-8)) - (u_twin/(self.twin_system.next_state[0, 0] + 1e-8))
-                reward = -100    
+                reward = -10
             else:
                 #if utilization is lower and wip also lower
                 if u < u_twin and state[0, 0] < self.twin_system.next_state[0, 0]:
                     #Reward porpotional to the the system that was the better ratio u/wip
                     # reward = (u/(state[0, 0] + 1e-8)) - (u_twin/(self.twin_system.next_state[0, 0] + 1e-8))
-                    reward = -100
+                    reward = -10
                 #if utilization is lower and wip is higher (worst case scenario)
                 elif u < u_twin and state[0, 0] >= self.twin_system.next_state[0, 0]:
                     # the greater the difference in utilization the more negative will the reward be
                     # the greater the difference in wip between twin and state the more negative will the reward be
                     # reward = (u - u_twin) + \
                         # (self.twin_system.next_state[0, 0] - state[0, 0])
-                    reward = -100
+                    reward = -10
             # wip_twin = self.twin_system.state[0, 0]
             # reward = u - (self.twin_system.previous_state[0, 0] - state[0, 0])
             # reward = reward + (self.parts_produced - self.twin_system.parts_produced)

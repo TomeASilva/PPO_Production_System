@@ -10,6 +10,7 @@ from tensorflow import keras
 import tensorflow_probability as tfp
 from production_system import logger, loggerTwin, logger_state
 from multiprocessing import Manager, Queue, Process
+from multiprocessing.queues import Full
 import multiprocessing
 import csv
 import datetime
@@ -412,7 +413,7 @@ class GlobalAgent(Agent):
             self.number_of_gradient_descent_steps = 0
             # for every optimizatin cycle there will be un x episodes and y number of gradient descent steps
             while self.current_number_episodes.value < self.total_number_episodes:
-                self.number_episodes_run_upuntil = self.current_number_episodes.value # because workers run in pararell the number of episodes 
+                # because workers run in pararell the number of episodes 
                 #would change within a cycle 
                 
                 for i in range(self.number_of_child_agents):
@@ -484,7 +485,7 @@ class GlobalAgent(Agent):
                     for key, value in gradients.items():
                         self.actor_optimizer.apply_gradients(zip(value, self.PPO.variables[key]))
                     #---END apply gradients for actor
-                    self.gradient_steps_per_episode += 1
+                  
                     #---END gradient descent for actor Nets
                     
                     
@@ -559,14 +560,14 @@ class GlobalAgent(Agent):
                     # av_reward = sum(rewards_volatile) / len(rewards_volatile)
                     # max_reward = max(rewards_volatile)
                     # min_reward = min(rewards_volatile)
-                    print(f"Ep number: {self.number_episodes_run_upuntil}: Reward : {reward}")
+                    print(f"Ep number: {self.current_number_episodes.value}: Reward : {reward}")
                     
-                    # print(f"Ep number: {self.number_episodes_run_upuntil}: Average: {av_reward} -- Max: {max_reward} -- Min {min_reward} ")
+                    # print(f"Ep number: {self.self.current}: Average: {av_reward} -- Max: {max_reward} -- Min {min_reward} ")
                     if self.record_statistics:
                         with self.writer.as_default():
-                            tf.summary.scalar(f"Reward", reward, self.number_episodes_run_upuntil)
-                            # tf.summary.scalar(f"Max_Reward", max_reward, self.number_episodes_run_upuntil)
-                            # tf.summary.scalar(f"Min_Reward", min_reward, self.number_episodes_run_upuntil)
+                            tf.summary.scalar(f"Reward", reward, self.current_number_episodes.value)
+                            # tf.summary.scalar(f"Max_Reward", max_reward, self.self.current_number_episodes.value)
+                            # tf.summary.scalar(f"Min_Reward", min_reward, self.self.current_number_episodes.value)
                     # self.rewards.append(av_reward)
                 #---END after n iterations of the loop run episode and print reward
                 
@@ -582,7 +583,7 @@ class GlobalAgent(Agent):
             with open("Running_Log.csv", "a") as file:
                     
                 writer = csv.writer(file, delimiter=",")
-                writer.writerow(["Run", self.number_episodes_run_upuntil])
+                writer.writerow(["Run", self.current_number_episodes.value])
             rewards_volatile = []
             for i in range (1):
                 path_twin, path_PPO = self.collect_episodes(1, True, False)
@@ -600,7 +601,7 @@ class GlobalAgent(Agent):
             # av_reward = sum(rewards_volatile) / len(rewards_volatile)
             # max_reward = max(rewards_volatile)
             # min_reward = min(rewards_volatile)
-            print(f"Ep number: {self.number_episodes_run_upuntil}: Reward : {reward}")
+            print(f"Ep number: {self.current_number_episodes.value}: Reward : {reward}")
             
                 
             print(f"Exited Global Agent")
@@ -622,7 +623,7 @@ class GlobalAgent(Agent):
             # av_reward = sum(rewards_volatile) / len(rewards_volatile)
             # max_reward = max(rewards_volatile)
             # min_reward = min(rewards_volatile)
-            print(f"Ep number: {self.number_episodes_run_upuntil}: Reward : {reward}")
+            print(f"Ep number: {self.current_number_episodes.value}: Reward : {reward}")
 
             print("Press ctr + C one last time. Summary has be saved!")
             # self.average_reward_queue.put(sum(self.rewards) / len(self.rewards), block=True, timeout=30)
@@ -702,7 +703,7 @@ class GlobalAgent(Agent):
             cpi = tf.math.multiply(self.probability_ratio, tf.stop_gradient(advantage_function))
             clip = tf.math.minimum(cpi, tf.multiply(tf.clip_by_value(self.probability_ratio, 1 - self.epsilon, 1 + self.epsilon), tf.stop_gradient(advantage_function)))
             actor_loss = -tf.reduce_mean(clip) - entropy_average * self.entropy
-            # tf.print("Actor_loss", actor_loss)
+            tf.print("Actor_loss", actor_loss)
             #---END Ensemble Actor loss function
         
         #---START Compute gradients for average
@@ -809,13 +810,20 @@ class WorkerAgent(Agent):
             
             # ---START Collect n episodes from this worker
             for ep in range(self.number_episodes_worker): # Run more than episode per iteration of PPO
-                self.collect_episodes(self.number_episodes_worker, False, False)
+                if self.current_number_episodes.value < self.total_number_episodes:
+                    self.collect_episodes(self.number_episodes_worker, False, False)
+                    
+                    states, actions, next_states, rewards, qsa = self.buffer2.unroll_memory(self.gamma)
+                    rollout = (states, actions, next_states, rewards, qsa)
+                    try:
+                        self.episode_queue.put(rollout, block=False)
+                    except Full:
+                        print("Queue Was full")
+                        break
+                        
+                    self.current_number_episodes.value += 1
+                else: break
                 
-                states, actions, next_states, rewards, qsa = self.buffer2.unroll_memory(self.gamma)
-                rollout = (states, actions, next_states, rewards, qsa)
-                self.episode_queue.put(rollout)
-                
-                self.current_number_episodes.value += 1
             #---END Collect n episodes from this worker   
               
         print(f"Exited {self.name}")
@@ -823,7 +831,7 @@ class WorkerAgent(Agent):
     def update_variables(self):
          #---Get current parameters from queue(put in by the global agent)
         try:
-            self.new_params = self.parameters_queue.get(block=True, timeout=30)
+            self.new_params = self.parameters_queue.get(block=True)
         except Exception as e:
             print(e)
         
@@ -868,8 +876,8 @@ hyperparameters = {"ppo_networks_configuration" : ppo_networks_configuration,
                     "critic_optimizer": tf.keras.optimizers.Adam(learning_rate=0.0001),
                     "entropy":0.09,
                     "gamma":0.999,
-                    "gradient_clipping_actor": 0.08, 
-                    "gradient_clipping_critic": 0.08, 
+                    "gradient_clipping_actor": 0.8, 
+                    "gradient_clipping_critic": 0.8, 
                     "gradient_steps_per_episode": 120,
                     "epsilon": 0.2,
                     "number_episodes_worker": 40
@@ -877,7 +885,7 @@ hyperparameters = {"ppo_networks_configuration" : ppo_networks_configuration,
     
 agent_config = {
     "action_range": (0, 100),
-    "total_number_episodes" : 10000,
+    "total_number_episodes" : 100000,
     "conwip": 10000,
     "warm_up_length": 100,
     "run_length": 3000
@@ -890,7 +898,7 @@ if __name__ == "__main__":
 
     params_queue = Manager().Queue(number_of_workers)
     current_number_episodes = Manager().Value("i", 0)    
-    episode_queue = Manager().Queue()
+    episode_queue = Manager().Queue(number_of_workers*hyperparameters["number_episodes_worker"])
     average_reward_queue = Queue(1)
     global_agent = GlobalAgent(**hyperparameters,
                                **agent_config,
