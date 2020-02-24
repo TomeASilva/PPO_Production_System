@@ -878,14 +878,14 @@ hyperparameters = {"ppo_networks_configuration" : ppo_networks_configuration,
                     "gamma":0.999,
                     "gradient_clipping_actor": 0.8, 
                     "gradient_clipping_critic": 0.8, 
-                    "gradient_steps_per_episode": 120,
+                    "gradient_steps_per_episode": 2,
                     "epsilon": 0.2,
-                    "number_episodes_worker": 40
+                    "number_episodes_worker": 1
                     }
     
 agent_config = {
     "action_range": (0, 100),
-    "total_number_episodes" : 100000,
+    "total_number_episodes" : 10,
     "conwip": 10000,
     "warm_up_length": 100,
     "run_length": 3000
