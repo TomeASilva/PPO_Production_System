@@ -885,7 +885,7 @@ hyperparameters = {"ppo_networks_configuration" : ppo_networks_configuration,
     
 agent_config = {
     "action_range": (0, 100),
-    "total_number_episodes" : 10,
+    "total_number_episodes" : 1000,
     "conwip": 10000,
     "warm_up_length": 100,
     "run_length": 3000
@@ -894,7 +894,7 @@ agent_config = {
 if __name__ == "__main__":
     
     multiprocessing.set_start_method('spawn')
-    number_of_workers = 4
+    number_of_workers = 8
 
     params_queue = Manager().Queue(number_of_workers)
     current_number_episodes = Manager().Value("i", 0)    
