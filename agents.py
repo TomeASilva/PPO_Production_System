@@ -638,31 +638,31 @@ class GlobalAgent(Agent):
         with tf.GradientTape(persistent=True) as tape:
             #---START Actor gradient calculation
             #---START Get the parameters for the Normal dist
-            # tf.print("Actions")
-            # for value in actions:
-            #     tf.print(value)
+            tf.print("Actions")
+            for value in actions:
+                tf.print(value)
 
             mu = self.PPO.actor_mu(states)
-            # tf.print("mu")
-            # for value in(mu):
-            #     tf.print(value)
+            tf.print("mu")
+            for value in(mu):
+                tf.print(value)
                 
             cov = self.PPO.actor_cov(states)
-            # tf.print("cov")
-            # for value in(cov):
-            #     tf.print(value)
+            tf.print("cov")
+            for value in(cov):
+                tf.print(value)
                 
             mu_old = tf.stop_gradient(self.PPO.actor_mu_old(states))
             cov_old = tf.stop_gradient(self.PPO.actor_cov_old(states))
             
-            # tf.print("mu_old")
-            # for value in(mu_old):
-            #     tf.print(value)
+            tf.print("mu_old")
+            for value in(mu_old):
+                tf.print(value)
               
             
-            # tf.print("cov_old")
-            # for value in(cov_old):
-            #     tf.print(value)
+            tf.print("cov_old")
+            for value in(cov_old):
+                tf.print(value)
             #---END Get the parameters for the Normal dist
             #---START Advantage function computation and normalization
             advantage_function = Qsa - self.PPO.critic(states)
@@ -682,23 +682,23 @@ class GlobalAgent(Agent):
             #---START compute the probability of the actions taken at the current episode
             probs = self.probability_density_func.prob(actions)
             
-            # tf.print("probs")
-            # for value in(probs):
-            #     tf.print(value)
+            tf.print("probs")
+            for value in(probs):
+                tf.print(value)
                 
             probs_old = tf.stop_gradient(self.probability_density_func_old.prob(actions))
             
-            # tf.print("probs_old")
-            # for value in(probs_old):
-            #     tf.print(value)
+            tf.print("probs_old")
+            for value in(probs_old):
+                tf.print(value)
             #---END compute the probability of the actions taken at the current episode
             #---START Ensemble Actor loss function
             self.probability_ratio = tf.math.divide(probs + 1e-5, probs_old + 1e-5)
 
-            # tf.print("probability ratio")
+            tf.print("probability ratio")
             
-            # for value in (self.probability_ratio):
-            #     tf.print(value) 
+            for value in (self.probability_ratio):
+                tf.print(value) 
                 
             cpi = tf.math.multiply(self.probability_ratio, tf.stop_gradient(advantage_function))
             clip = tf.math.minimum(cpi, tf.multiply(tf.clip_by_value(self.probability_ratio, 1 - self.epsilon, 1 + self.epsilon), tf.stop_gradient(advantage_function)))
@@ -709,17 +709,17 @@ class GlobalAgent(Agent):
         #---START Compute gradients for average
         gradients_mu = tape.gradient(actor_loss, self.PPO.actor_mu.trainable_variables)
         #---
-        # tf.print("gradients_mu")
-        # for value in gradients_mu:
-        #     tf.print(value)
+        tf.print("gradients_mu")
+        for value in gradients_mu:
+            tf.print(value)
         #---START Compute gradients for the covariance
 
         gradients_cov = tape.gradient(actor_loss, self.PPO.cov_head_variables)
         # END Compute gradients for the covariance
         
-        # tf.print("cov")
-        # for value in gradients_cov:
-        #     tf.print(cov)
+        tf.print("cov")
+        for value in gradients_cov:
+            tf.print(cov)
             
         gradients = {"mu": gradients_mu,
                      "cov": gradients_cov,}
