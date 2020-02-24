@@ -410,11 +410,18 @@ class GlobalAgent(Agent):
              #---START Load variable weights if self.save_checkpoints is activated
             if self.save_checkpoints:
                 try:
-                    self.PPO.actor_mu.load_weights("./saved_checkpoints/actor_mu/")
-                    self.PPO.actor_cov.load_weights("./saved_checkpoints/actor_cov/")
+                    self.PPO.actor_mu_old.load_weights("./saved_checkpoints/actor_mu/")
+                    self.PPO.actor_cov_old.load_weights("./saved_checkpoints/actor_cov/")
                     self.PPO.critic.load_weights("./saved_checkpoints/critic/")
-                except:
-                    print("There was an error")
+                    
+                    self.current_parameters_old =  {"mu": [variable.numpy() for variable in self.PPO.actor_mu_old.trainable_variables],
+                           "cov": [variable.numpy() for variable in self.PPO.cov_head_variables_old],
+                           "critic": [variable.numpy() for variable in self.PPO.critic.trainable_variables]
+                           }
+                    
+                except Exception as e:
+                    print(e)
+                    print("The program will continue")
                     pass
             #---END Load variable weights if self.save_checkpoints is activated
             self.number_optimization_cycles = 0
@@ -889,9 +896,9 @@ hyperparameters = {"ppo_networks_configuration" : ppo_networks_configuration,
                     "gamma":0.999,
                     "gradient_clipping_actor": 0.8, 
                     "gradient_clipping_critic": 0.8, 
-                    "gradient_steps_per_episode": 1,
+                    "gradient_steps_per_episode": 10,
                     "epsilon": 0.2,
-                    "number_episodes_worker": 1
+                    "number_episodes_worker": 20
                     }
     
 agent_config = {
@@ -905,7 +912,7 @@ agent_config = {
 if __name__ == "__main__":
     
     multiprocessing.set_start_method('spawn')
-    number_of_workers = 8
+    number_of_workers = 4
 
     params_queue = Manager().Queue(number_of_workers)
     current_number_episodes = Manager().Value("i", 0)    
