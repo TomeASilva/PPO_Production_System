@@ -878,7 +878,7 @@ hyperparameters = {"ppo_networks_configuration" : ppo_networks_configuration,
                     "gamma":0.999,
                     "gradient_clipping_actor": 0.8, 
                     "gradient_clipping_critic": 0.8, 
-                    "gradient_steps_per_episode": 10,
+                    "gradient_steps_per_episode": 1,
                     "epsilon": 0.2,
                     "number_episodes_worker": 1
                     }
