@@ -469,6 +469,7 @@ class GlobalAgent(Agent):
                 
                 except Exception as e :    
                     print(e)
+                    
                     print("We couldn't load the optimizer state")
                     print("The optimizers state will be reseted")
                     
@@ -649,14 +650,14 @@ class GlobalAgent(Agent):
             
                 if self.save_checkpoints:
                     
-                    with open("./saved_checkpoints/optimizers/actor/actor_optimizer_mu.pkl", "wb") as file:
+                    with open("./saved_checkpoints/optimizers/actor/actor_optimizer_mu.pkl", "wb+") as file:
                         pickle.dump(self.actor_optimizer_mu, file)
                     
-                    with open("./saved_checkpoints/optimizers/actor/actor_optimizer_cov.pkl", "wb") as file:
+                    with open("./saved_checkpoints/optimizers/actor/actor_optimizer_cov.pkl", "wb+") as file:
                         pickle.dump(self.actor_optimizer_cov, file)
                     
                     
-                    with open("./saved_checkpoints/optimizers/critic/critic_optimizer.pkl", "wb") as file:
+                    with open("./saved_checkpoints/optimizers/critic/critic_optimizer.pkl", "wb+") as file:
                         pickle.dump(self.critic_optimizer, file)
     
                         
@@ -974,14 +975,14 @@ hyperparameters = {"ppo_networks_configuration" : ppo_networks_configuration,
                     "gamma":0.999,
                     "gradient_clipping_actor": 0.8, 
                     "gradient_clipping_critic": 0.8, 
-                    "gradient_steps_per_episode": 5,
+                    "gradient_steps_per_episode": 8,
                     "epsilon": 0.2,
-                    "number_episodes_worker": 1
+                    "number_episodes_worker": 10
                     }
     
 agent_config = {
     "action_range": (0, 100),
-    "total_number_episodes" : 3,
+    "total_number_episodes" : 8,
     "conwip": 10000,
     "warm_up_length": 100,
     "run_length": 3000
