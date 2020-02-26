@@ -15,6 +15,7 @@ import multiprocessing
 import csv
 import datetime
 import logging
+import pickle
 gradient_logger = logging.getLogger(__name__)
 gradient_logger.setLevel(logging.DEBUG)
 formatter = logging.Formatter("%(message)s")
@@ -253,7 +254,8 @@ class Agent:
                  gradient_clipping_actor,
                  gradient_clipping_critic,
                  parameters_queue,
-                 actor_optimizer,
+                 actor_optimizer_mu,
+                 actor_optimizer_cov,
                  critic_optimizer,
                  entropy,
                  number_episodes_worker
@@ -281,7 +283,8 @@ class Agent:
         self.gradient_clipping_actor = gradient_clipping_actor
         self.gradient_clipping_critic = gradient_clipping_critic
         self.parameters_queue = parameters_queue
-        self.actor_optimizer = actor_optimizer
+        self.actor_optimizer_mu = actor_optimizer_mu
+        self.actor_optimizer_cov = actor_optimizer_cov
         self.critic_optimizer = critic_optimizer
         self.entropy = entropy
         self.number_episodes_worker = number_episodes_worker
@@ -357,7 +360,8 @@ class GlobalAgent(Agent):
                  gradient_clipping_critic,
                  parameters_queue,
                  average_reward_queue,
-                 actor_optimizer,
+                 actor_optimizer_mu,
+                 actor_optimizer_cov,
                  critic_optimizer,
                  entropy
                  ):
@@ -381,7 +385,8 @@ class GlobalAgent(Agent):
                  gradient_clipping_actor=gradient_clipping_actor,
                  gradient_clipping_critic=gradient_clipping_critic,
                  parameters_queue=parameters_queue,
-                 actor_optimizer=actor_optimizer,
+                 actor_optimizer_mu=actor_optimizer_mu,
+                 actor_optimizer_cov=actor_optimizer_cov,
                  critic_optimizer=critic_optimizer,
                  entropy=entropy,
                  number_episodes_worker = number_episodes_worker)
@@ -391,38 +396,88 @@ class GlobalAgent(Agent):
         self.average_reward_queue = average_reward_queue
         self.rewards = deque(maxlen=100)
 
+    def restore_old_models(self, ppo_config):
+        try:
+            self.PPO.actor_mu_old.load_weights("./saved_checkpoints/actor_mu/")
+            self.PPO.actor_cov_old.load_weights("./saved_checkpoints/actor_cov/")
+            self.PPO.critic.load_weights("./saved_checkpoints/critic/")
+            
+            self.PPO.actor_mu.load_weights("./saved_checkpoints/actor_mu/")
+            self.PPO.actor_cov.load_weights("./saved_checkpoints/actor_cov/")
+            
+            actor_cov_n_layers_head = len(ppo_config["mu_head_config"]["layer_sizes"])
+            actor_cov_total_n_layers = len(self.PPO.actor_cov.layers)
+            cov_head_variables = []
 
+            for i in range (actor_cov_total_n_layers - actor_cov_n_layers_head, actor_cov_total_n_layers, 1):
+                for variable in self.PPO.actor_cov.get_layer(index = i).trainable_variables:
+                    cov_head_variables.append(variable)
+
+            self.PPO.cov_head_variables = cov_head_variables
+            
+            self.PPO.current_parameters = {"mu": [variable.numpy() for variable in self.PPO.actor_mu.trainable_variables],
+                           "cov": [variable.numpy() for variable in cov_head_variables],
+                           "critic": [variable.numpy() for variable in self.PPO.critic.trainable_variables]
+                           }
+
+            #check if variables in fact were loaded
+            # for key, model in self.PPO.current_parameters.items():
+            #     for variable in model:
+            #         tf.print(variable)        
+            
+            cov_head_variables_old = []
+
+            for i in range (actor_cov_total_n_layers - actor_cov_n_layers_head, actor_cov_total_n_layers, 1):
+                for variable in self.PPO.actor_cov_old.get_layer(index = i).trainable_variables:
+                    cov_head_variables_old.append(variable)
+
+            self.PPO.cov_head_variables_old = cov_head_variables_old
+            
+            self.PPO.current_parameters_old = {"mu": [variable.numpy() for variable in self.PPO.actor_mu_old.trainable_variables],
+                           "cov": [variable.numpy() for variable in cov_head_variables_old],
+                           "critic": [variable.numpy() for variable in self.PPO.critic.trainable_variables]
+                           }
+
+            return "Loading models was succefull"
+        except Exception as message :
+            return (message)
     def training_loop(self):
         try:
             #---START Create a summary writer
             if self.record_statistics: 
                 self.writer = tf.summary.create_file_writer(f"./summaries/global/{datetime.datetime.now().strftime('%Y%m%d-%H%M%S')}")
             self.current_pass = 0
-            
             #---END of Create summary writer
             self.FixedPolicy = FixedPolicy(self.conwip, self.action_range)
             self.PPO = PPO(**self.ppo_networks_configuration, action_range=self.action_range, agent_name=self.name, summary_writer= self.writer)
-            self.PPO.build_models() #build models (Critic, Actor Networks)
-            
+            self.PPO.build_models() #build models (Critic, Actor Networks) 
             print(f"1 optimization cycle corresponds to {self.number_of_child_agents * self.number_episodes_worker} episodes and {self.gradient_steps_per_episode} gradient steps")
             
         
              #---START Load variable weights if self.save_checkpoints is activated
             if self.save_checkpoints:
                 try:
-                    self.PPO.actor_mu_old.load_weights("./saved_checkpoints/actor_mu/")
-                    self.PPO.actor_cov_old.load_weights("./saved_checkpoints/actor_cov/")
-                    self.PPO.critic.load_weights("./saved_checkpoints/critic/")
+                    with open("./saved_checkpoints/optimizers/actor/actor_optimizer_mu.pkl", "rb") as file:
+                        self.actor_optimizer_mu = pickle.load(file)
                     
-                    self.current_parameters_old =  {"mu": [variable.numpy() for variable in self.PPO.actor_mu_old.trainable_variables],
-                           "cov": [variable.numpy() for variable in self.PPO.cov_head_variables_old],
-                           "critic": [variable.numpy() for variable in self.PPO.critic.trainable_variables]
-                           }
                     
-                except Exception as e:
+                    with open("./saved_checkpoints/optimizers/actor/actor_optimizer_cov.pkl", "rb") as file:
+                        self.actor_optimizer_cov = pickle.load(file)
+                    
+                    with open("./saved_checkpoints/optimizers/critic/critic_optimizer.pkl", "rb") as file:
+                        self.critic_optimizer = pickle.load(file)
+                
+                except Exception as e :    
                     print(e)
-                    print("The program will continue")
-                    pass
+                    print("We couldn't load the optimizer state")
+                    print("The optimizers state will be reseted")
+                    
+                
+                message = self.restore_old_models(self.ppo_networks_configuration)
+                print(message, "\n" )
+            
+           
+                
             #---END Load variable weights if self.save_checkpoints is activated
             self.number_optimization_cycles = 0
             self.number_of_gradient_descent_steps = 0
@@ -498,7 +553,11 @@ class GlobalAgent(Agent):
                     
                     #---START apply gradients for actor
                     for key, value in gradients.items():
-                        self.actor_optimizer.apply_gradients(zip(value, self.PPO.variables[key]))
+                        if key == "mu":
+                            self.actor_optimizer_mu.apply_gradients(zip(value, self.PPO.variables[key]))
+                        if key == "cov":
+                            self.actor_optimizer_cov.apply_gradients(zip(value, self.PPO.variables[key]))
+                            
                     #---END apply gradients for actor
                   
                     #---END gradient descent for actor Nets
@@ -587,7 +646,20 @@ class GlobalAgent(Agent):
                 #---END after n iterations of the loop run episode and print reward
                 
                 #---START Save weights at current iter
+            
                 if self.save_checkpoints:
+                    
+                    with open("./saved_checkpoints/optimizers/actor/actor_optimizer_mu.pkl", "wb") as file:
+                        pickle.dump(self.actor_optimizer_mu, file)
+                    
+                    with open("./saved_checkpoints/optimizers/actor/actor_optimizer_cov.pkl", "wb") as file:
+                        pickle.dump(self.actor_optimizer_cov, file)
+                    
+                    
+                    with open("./saved_checkpoints/optimizers/critic/critic_optimizer.pkl", "wb") as file:
+                        pickle.dump(self.critic_optimizer, file)
+    
+                        
                     self.PPO.actor_mu.save_weights("./saved_checkpoints/actor_mu/")
                     self.PPO.actor_cov.save_weights("./saved_checkpoints/actor_cov/")
                     self.PPO.critic.save_weights("./saved_checkpoints/critic/")
@@ -618,7 +690,10 @@ class GlobalAgent(Agent):
             # min_reward = min(rewards_volatile)
             print(f"Ep number: {self.current_number_episodes.value}: Reward : {reward}")
             
-                
+            # for key, model in self.current_parameters.items():
+            #     for variable in model:
+            #         tf.print(variable)
+                    
             print(f"Exited Global Agent")
             
         except KeyboardInterrupt:
@@ -775,7 +850,8 @@ class WorkerAgent(Agent):
                  gradient_clipping_actor,
                  gradient_clipping_critic,
                  parameters_queue,
-                 actor_optimizer,
+                 actor_optimizer_mu,
+                 actor_optimizer_cov,
                  critic_optimizer,
                  entropy,
                  gradient_steps_per_episode
@@ -797,7 +873,8 @@ class WorkerAgent(Agent):
                         gradient_clipping_actor=gradient_clipping_actor,
                         gradient_clipping_critic=gradient_clipping_critic,
                         parameters_queue=parameters_queue,
-                        actor_optimizer=actor_optimizer,
+                        actor_optimizer_mu=actor_optimizer_mu,
+                        actor_optimizer_cov=actor_optimizer_cov,
                         critic_optimizer=critic_optimizer,
                         entropy=entropy,
                         number_episodes_worker=number_episodes_worker,
@@ -890,20 +967,21 @@ ppo_networks_configuration = {"trunk_config": {"layer_sizes": [100, 100],
                         }
 
 hyperparameters = {"ppo_networks_configuration" : ppo_networks_configuration,
-                   "actor_optimizer": tf.keras.optimizers.Adam(learning_rate=0.0001),
+                   "actor_optimizer_mu": tf.keras.optimizers.Adam(learning_rate=0.0001),
+                   "actor_optimizer_cov": tf.keras.optimizers.Adam(learning_rate=0.0001),
                     "critic_optimizer": tf.keras.optimizers.Adam(learning_rate=0.0001),
                     "entropy":0.09,
                     "gamma":0.999,
                     "gradient_clipping_actor": 0.8, 
                     "gradient_clipping_critic": 0.8, 
-                    "gradient_steps_per_episode": 10,
+                    "gradient_steps_per_episode": 5,
                     "epsilon": 0.2,
-                    "number_episodes_worker": 20
+                    "number_episodes_worker": 1
                     }
     
 agent_config = {
     "action_range": (0, 100),
-    "total_number_episodes" : 1000,
+    "total_number_episodes" : 3,
     "conwip": 10000,
     "warm_up_length": 100,
     "run_length": 3000
@@ -912,7 +990,7 @@ agent_config = {
 if __name__ == "__main__":
     
     multiprocessing.set_start_method('spawn')
-    number_of_workers = 4
+    number_of_workers = 1
 
     params_queue = Manager().Queue(number_of_workers)
     current_number_episodes = Manager().Value("i", 0)    
