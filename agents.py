@@ -258,7 +258,8 @@ class Agent:
                  actor_optimizer_cov,
                  critic_optimizer,
                  entropy,
-                 number_episodes_worker
+                 number_episodes_worker,
+                 log_gradient_descent,
                  
                  ):
         
@@ -288,6 +289,7 @@ class Agent:
         self.critic_optimizer = critic_optimizer
         self.entropy = entropy
         self.number_episodes_worker = number_episodes_worker
+        self.log_gradient_descent = log_gradient_descent
         
     def collect_episodes(self,
                         number_ep,
@@ -363,7 +365,8 @@ class GlobalAgent(Agent):
                  actor_optimizer_mu,
                  actor_optimizer_cov,
                  critic_optimizer,
-                 entropy
+                 entropy,
+                 log_gradient_descent,
                  ):
 
                 
@@ -389,7 +392,8 @@ class GlobalAgent(Agent):
                  actor_optimizer_cov=actor_optimizer_cov,
                  critic_optimizer=critic_optimizer,
                  entropy=entropy,
-                 number_episodes_worker = number_episodes_worker)
+                 number_episodes_worker = number_episodes_worker,
+                 log_gradient_descent=log_gradient_descent)
 
         self.number_of_child_agents = number_of_child_agents
         self.save_checkpoints = save_checkpoints
@@ -439,8 +443,8 @@ class GlobalAgent(Agent):
                            }
 
             return "Loading models was succefull"
-        except Exception as message :
-            return (message)
+        except Exception as message:
+            return (str(message) + "\n" + "The weights will be randomly generated")
     def training_loop(self):
         try:
             #---START Create a summary writer
@@ -453,29 +457,31 @@ class GlobalAgent(Agent):
             self.PPO.build_models() #build models (Critic, Actor Networks) 
             print(f"1 optimization cycle corresponds to {self.number_of_child_agents * self.number_episodes_worker} episodes and {self.gradient_steps_per_episode} gradient steps")
             
-        
+            self.number_episodes_extracted = 0     
              #---START Load variable weights if self.save_checkpoints is activated
             if self.save_checkpoints:
                 try:
                     with open("./saved_checkpoints/optimizers/actor/actor_optimizer_mu.pkl", "rb") as file:
                         self.actor_optimizer_mu = pickle.load(file)
+                        self.actor_optimizer_mu.learning_rate.assign(0.0001)
                     
                     
                     with open("./saved_checkpoints/optimizers/actor/actor_optimizer_cov.pkl", "rb") as file:
                         self.actor_optimizer_cov = pickle.load(file)
+                        self.actor_optimizer_cov.learning_rate.assign(0.0001)
+                    
                     
                     with open("./saved_checkpoints/optimizers/critic/critic_optimizer.pkl", "rb") as file:
                         self.critic_optimizer = pickle.load(file)
-                
+                        self.critic_optimizer.learning_rate.assign(0.0001)
                 except Exception as e :    
                     print(e)
-                    
                     print("We couldn't load the optimizer state")
                     print("The optimizers state will be reseted")
                     
                 
                 message = self.restore_old_models(self.ppo_networks_configuration)
-                print(message, "\n" )
+                print(message)
             
            
                 
@@ -507,13 +513,23 @@ class GlobalAgent(Agent):
 
                     if i == 0:
                         states, actions, next_states, rewards, qsa = episode
-                    
+
+                        if self.record_statistics:
+                            episode_reward = np.sum(rewards)
+                            tf.summary.scalar(f"Rewards", episode_reward, self.number_episodes_extracted)
+                            
                     else:
                         states_temp, actions_temp, next_states_temp, rewards_temp, qsa_temp = episode
                         
                         states = np.vstack((states, states_temp))
                         actions = np.vstack((actions, actions_temp))
                         qsa = np.vstack((qsa, qsa_temp))
+                        if self.record_statistics:
+                            episode_reward = np.sum(rewards_temp)
+                            tf.summary.scalar(f"Rewards", episode_reward, self.number_episodes_extracted)
+                        
+                    self.number_episodes_extracted += 1
+                    
                 #---END collect episodes available from all worker
                 
                 
@@ -545,8 +561,8 @@ class GlobalAgent(Agent):
                                 
                                         tf.summary.histogram(f"Gradients_{self.name}_{str(key)}_{variable.name}", gradient, self.number_of_gradient_descent_steps)
                     #---END Record gradient to summaries
-                     
-                    #---Start Record average entropy for episodes
+                
+                    #---Start Record average entropy for1 episodes
                     if self.record_statistics:
                         with self.writer.as_default():
                             tf.summary.scalar(f"Entropy", entropy, self.number_of_gradient_descent_steps)
@@ -632,15 +648,17 @@ class GlobalAgent(Agent):
                         _, _, _, rewards_temp, _ = self.buffer2.unroll_memory(self.gamma)
                         reward = np.sum(rewards_temp)
                         rewards_volatile.append(reward)
+
                     # av_reward = sum(rewards_volatile) / len(rewards_volatile)
                     # max_reward = max(rewards_volatile)
                     # min_reward = min(rewards_volatile)
                     print(f"Ep number: {self.current_number_episodes.value}: Reward : {reward}")
                     
+                    self.number_episodes_extracted += 1
                     # print(f"Ep number: {self.self.current}: Average: {av_reward} -- Max: {max_reward} -- Min {min_reward} ")
                     if self.record_statistics:
                         with self.writer.as_default():
-                            tf.summary.scalar(f"Reward", reward, self.current_number_episodes.value)
+                            tf.summary.scalar(f"Rewards", reward, self.number_episodes_extracted)
                             # tf.summary.scalar(f"Max_Reward", max_reward, self.self.current_number_episodes.value)
                             # tf.summary.scalar(f"Min_Reward", min_reward, self.self.current_number_episodes.value)
                     # self.rewards.append(av_reward)
@@ -650,14 +668,14 @@ class GlobalAgent(Agent):
             
                 if self.save_checkpoints:
                     
-                    with open("./saved_checkpoints/optimizers/actor/actor_optimizer_mu.pkl", "wb+") as file:
+                    with open("./saved_checkpoints/optimizers/actor/actor_optimizer_mu.pkl", "wb") as file:
                         pickle.dump(self.actor_optimizer_mu, file)
                     
-                    with open("./saved_checkpoints/optimizers/actor/actor_optimizer_cov.pkl", "wb+") as file:
+                    with open("./saved_checkpoints/optimizers/actor/actor_optimizer_cov.pkl", "wb") as file:
                         pickle.dump(self.actor_optimizer_cov, file)
                     
                     
-                    with open("./saved_checkpoints/optimizers/critic/critic_optimizer.pkl", "wb+") as file:
+                    with open("./saved_checkpoints/optimizers/critic/critic_optimizer.pkl", "wb") as file:
                         pickle.dump(self.critic_optimizer, file)
     
                         
@@ -724,37 +742,47 @@ class GlobalAgent(Agent):
         value = self.PPO.critic(state)
         return value
     
-    # @tf.function(input_signature=(tf.TensorSpec(shape=[None, 7]), tf.TensorSpec(shape=[None, 1]), tf.TensorSpec(shape=[None, 1])))  
+    @tf.function(input_signature=(tf.TensorSpec(shape=[None, 7]), tf.TensorSpec(shape=[None, 1]), tf.TensorSpec(shape=[None, 1])))  
     def gradient_actor(self, states, actions, Qsa):
         with tf.GradientTape(persistent=True) as tape:
-            gradient_logger.debug(f"Cycle {self.number_optimization_cycles}")
+            if self.log_gradient_descent:       
+                gradient_logger.debug(f"Cycle {self.number_optimization_cycles}")
+                
             #---START Actor gradient calculation
             #---START Get the parameters for the Normal dist
-            gradient_logger.debug(f"Actions")
-            for value in actions:
-                gradient_logger.debug(value)
+            
+            if self.log_gradient_descent:        
+                gradient_logger.debug(f"Actions")
+                for value in actions:
+                    gradient_logger.debug(value)
 
             mu = self.PPO.actor_mu(states)
-            gradient_logger.debug(f"MU")
-            for value in mu:
-                gradient_logger.debug (value)
             
+            if self.log_gradient_descent:        
+                gradient_logger.debug(f"MU")
+                for value in mu:
+                    gradient_logger.debug (value)
+                
             cov = self.PPO.actor_cov(states)
-            gradient_logger.debug(f"Cov")
-            for value in cov: 
-                gradient_logger.debug(value)
             
+            if self.log_gradient_descent:        
+                gradient_logger.debug(f"Cov")
+                for value in cov: 
+                    gradient_logger.debug(value)
+                
             mu_old = tf.stop_gradient(self.PPO.actor_mu_old(states))
             cov_old = tf.stop_gradient(self.PPO.actor_cov_old(states))
             
-            gradient_logger.debug(f"MU_old")
-            for value in mu_old:
-                gradient_logger.debug (value)
+            if self.log_gradient_descent:        
+                gradient_logger.debug(f"MU_old")
+                for value in mu_old:
+                    gradient_logger.debug (value)
             
-            gradient_logger.debug(f"Cov_old")
-            for value in cov_old:
-                gradient_logger.debug (value)
-            
+            if self.log_gradient_descent:        
+                gradient_logger.debug(f"Cov_old")
+                for value in cov_old:
+                    gradient_logger.debug (value)
+                
             #---END Get the parameters for the Normal dist
             #---START Advantage function computation and normalization
             advantage_function = Qsa - self.PPO.critic(states)
@@ -774,24 +802,26 @@ class GlobalAgent(Agent):
             #---START compute the probability of the actions taken at the current episode
             probs = self.probability_density_func.prob(actions)
             
-            gradient_logger.debug(f"Probs")
-            for value in probs:
-                gradient_logger.debug(value)
-            
+            if self.log_gradient_descent:        
+                gradient_logger.debug(f"Probs")
+                for value in probs:
+                    gradient_logger.debug(value)
+                
             probs_old = tf.stop_gradient(self.probability_density_func_old.prob(actions))
             
-            
-            gradient_logger.debug(f"Probs_old")
-            for value in probs_old:
-                gradient_logger.debug(value)
-            
+            if self.log_gradient_descent:        
+                gradient_logger.debug(f"Probs_old")
+                for value in probs_old:
+                    gradient_logger.debug(value)
+                
             #---START Ensemble Actor loss function
             self.probability_ratio = tf.math.divide(probs + 1e-5, probs_old + 1e-5)
             
-            gradient_logger.debug(f"Probability ratio")
-            for value in self.probability_ratio:
-                gradient_logger.debug(value)
-                
+            if self.log_gradient_descent:        
+                gradient_logger.debug(f"Probability ratio")
+                for value in self.probability_ratio:
+                    gradient_logger.debug(value)
+                    
             cpi = tf.math.multiply(self.probability_ratio, tf.stop_gradient(advantage_function))
             clip = tf.math.minimum(cpi, tf.multiply(tf.clip_by_value(self.probability_ratio, 1 - self.epsilon, 1 + self.epsilon), tf.stop_gradient(advantage_function)))
             actor_loss = -tf.reduce_mean(clip) - entropy_average * self.entropy
@@ -802,19 +832,21 @@ class GlobalAgent(Agent):
         #---START Compute gradients for average
         gradients_mu = tape.gradient(actor_loss, self.PPO.actor_mu.trainable_variables)
         #---
-        gradient_logger.debug(f"Gradients Mu")
-        for value in gradients_mu:
-            gradient_logger.debug(value)
-        
+        if self.log_gradient_descent:        
+            gradient_logger.debug(f"Gradients Mu")
+            for value in gradients_mu:
+                gradient_logger.debug(value)
+            
         #---START Compute gradients for the covariance
 
         gradients_cov = tape.gradient(actor_loss, self.PPO.cov_head_variables)
         # END Compute gradients for the covariance
         
-        gradient_logger.debug("Gradient Cov")
-        for value in gradients_cov:
-            gradient_logger.debug(value)
-            
+        if self.log_gradient_descent:        
+            gradient_logger.debug("Gradient Cov")
+            for value in gradients_cov:
+                gradient_logger.debug(value)
+                
         gradients = {"mu": gradients_mu,
                      "cov": gradients_cov,}
         #---END Actor gradient calculation
@@ -855,7 +887,8 @@ class WorkerAgent(Agent):
                  actor_optimizer_cov,
                  critic_optimizer,
                  entropy,
-                 gradient_steps_per_episode
+                 gradient_steps_per_episode,
+                 log_gradient_descent
                  ):
         Agent.__init__(self,
                         name=name,
@@ -879,7 +912,8 @@ class WorkerAgent(Agent):
                         critic_optimizer=critic_optimizer,
                         entropy=entropy,
                         number_episodes_worker=number_episodes_worker,
-                        gradient_steps_per_episode=gradient_steps_per_episode
+                        gradient_steps_per_episode=gradient_steps_per_episode,
+                        log_gradient_descent=log_gradient_descent
                         )
 
         
@@ -962,8 +996,8 @@ ppo_networks_configuration = {"trunk_config": {"layer_sizes": [100, 100],
                                         "activations": [tf.nn.leaky_relu, tf.nn.leaky_relu, "softplus"]},
                      "cov_head_config": {"layer_sizes": [64, 32, 1],
                                         "activations": [tf.nn.leaky_relu, tf.nn.leaky_relu, "softplus"]},
-                     "critic_net_config": {"layer_sizes": [100, 64, 1],
-                                            "activations": ["relu", "relu", "linear"]},
+                     "critic_net_config": {"layer_sizes": [100, 80, 64, 30, 1],
+                                            "activations": ["relu", "relu", "relu", "relu",  "linear"]},
                      "input_layer_size": 7
                         }
 
@@ -971,18 +1005,18 @@ hyperparameters = {"ppo_networks_configuration" : ppo_networks_configuration,
                    "actor_optimizer_mu": tf.keras.optimizers.Adam(learning_rate=0.0001),
                    "actor_optimizer_cov": tf.keras.optimizers.Adam(learning_rate=0.0001),
                     "critic_optimizer": tf.keras.optimizers.Adam(learning_rate=0.0001),
-                    "entropy":0.09,
+                    "entropy":0.01,
                     "gamma":0.999,
                     "gradient_clipping_actor": 0.8, 
                     "gradient_clipping_critic": 0.8, 
-                    "gradient_steps_per_episode": 8,
+                    "gradient_steps_per_episode": 30,
                     "epsilon": 0.2,
-                    "number_episodes_worker": 10
+                    "number_episodes_worker": 20
                     }
     
 agent_config = {
     "action_range": (0, 100),
-    "total_number_episodes" : 8,
+    "total_number_episodes" : 100000,
     "conwip": 10000,
     "warm_up_length": 100,
     "run_length": 3000
@@ -991,7 +1025,7 @@ agent_config = {
 if __name__ == "__main__":
     
     multiprocessing.set_start_method('spawn')
-    number_of_workers = 1
+    number_of_workers = 4
 
     params_queue = Manager().Queue(number_of_workers)
     current_number_episodes = Manager().Value("i", 0)    
@@ -1007,7 +1041,8 @@ if __name__ == "__main__":
                                save_checkpoints=True,
                                episode_queue=episode_queue,
                                current_number_episodes=current_number_episodes,
-                               parameters_queue=params_queue)
+                               parameters_queue=params_queue,
+                               log_gradient_descent=False)
     workers = []
     for _ in range(number_of_workers):
         print("worker created")
@@ -1018,7 +1053,8 @@ if __name__ == "__main__":
                         record_statistics=True,
                         episode_queue=episode_queue,
                         current_number_episodes=current_number_episodes,
-                        parameters_queue=params_queue) 
+                        parameters_queue=params_queue,
+                        log_gradient_descent=False) 
         
         workers.append(myWorker)
    

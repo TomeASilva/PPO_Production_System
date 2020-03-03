@@ -248,10 +248,10 @@ class ProductionSystem:
                     
                     self.reward = self.compute_reward(self.next_state, self.action) #int
                     
-                    # if self.env.now + self.decision_epoch_interval > self.run_length:
+                    if self.env.now + self.decision_epoch_interval > self.run_length:
                         
                         
-                    #     self.reward += self.policy.get_state_value(self.previous_state)
+                        self.reward += self.policy.get_state_value(self.previous_state)
 
                     sample = (self.previous_state.reshape(self.previous_state.shape[1],), 
                         np.array(self.action), self.next_state.reshape(self.next_state.shape[1],), self.reward)
@@ -275,6 +275,7 @@ class ProductionSystem:
             self.update_utilization()
 
     def update_average_wip_state_element(self):
+
         # State --> average Overal WIP; average interarrival time, std interarrival time; u_machine 1, u_machine 2, average_processing_time1, average_processing_time2
         #track the number of times the this element of the sate was updated
         self.state_element_number_updates[0] += 1
@@ -353,8 +354,20 @@ class ProductionSystem:
             self.state_element_number_updates[6] += 1
             self.state[6] = self.state[6] * self.weighted_average_beta + \
                 processing_time * (1 - self.weighted_average_beta)
-
+                
+    # def compute_reward(self, state,  action):
+    #     if self.twin_system != None:
+    #         if self.parts_produced >= self.twin_system.parts_produced and state[0, 0] < self.twin_system.next_state[0, 0]:
+    #             reward = (self.parts_produced - self.twin_system.parts_produced) + self.twin_system.next_state[0, 0] - state[0, 0]
+    #         else:
+    #             reward = 0    
+                
+    #     else: 
+    #         reward = 0 
+    #     return reward 
+        
     def compute_reward(self, state,  action):
+
         
         # throughput = (1 / state[0, 5])
         # flow_time = state[0, 1]
@@ -399,24 +412,25 @@ class ProductionSystem:
             #if Utilization is higher but wip is also higher
             elif u >= u_twin:
                 #Reward porpotional to the the system that was the better ratio u/wip
-                # reward = (u/(state[0, 0] + 1e-8)) - (u_twin/(self.twin_system.next_state[0, 0] + 1e-8))
+                # reward = ((u)/(state[0, 0] + 1e-8)) - ((u_twin)/(self.twin_system.next_state[0, 0] + 1e-8))  
                 reward = -10
             else:
                 #if utilization is lower and wip also lower
                 if u < u_twin and state[0, 0] < self.twin_system.next_state[0, 0]:
                     #Reward porpotional to the the system that was the better ratio u/wip
-                    # reward = (u/(state[0, 0] + 1e-8)) - (u_twin/(self.twin_system.next_state[0, 0] + 1e-8))
+                    # reward = ((u) /(state[0, 0] + 1e-8)) - ((u_twin)/(self.twin_system.next_state[0, 0] + 1e-8))
                     reward = -10
                 #if utilization is lower and wip is higher (worst case scenario)
                 elif u < u_twin and state[0, 0] >= self.twin_system.next_state[0, 0]:
                     # the greater the difference in utilization the more negative will the reward be
                     # the greater the difference in wip between twin and state the more negative will the reward be
-                    # reward = (u - u_twin) + \
-                        # (self.twin_system.next_state[0, 0] - state[0, 0])
-                    reward = -10
+                    # reward = (u - u_twin) + (self.twin_system.next_state[0, 0] - state[0, 0])
+                    reward = -50
             # wip_twin = self.twin_system.state[0, 0]
             # reward = u - (self.twin_system.previous_state[0, 0] - state[0, 0])
             # reward = reward + (self.parts_produced - self.twin_system.parts_produced)
+            # if self.env.now + self.decision_epoch_interval > self.run_length:
+            #     reward += self.parts_produced - self.twin_system.parts_produced
         
         else:
 

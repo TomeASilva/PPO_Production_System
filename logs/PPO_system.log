@@ -1,0 +1,1855 @@
+Part 1 entered the system as information at 0
+Part 1, released into production at 0
+Part 1, entered Buffer 1 at  0
+Part 1, started being processed on Machine1 at  0
+Part 1, entered buffer2 at  16.938302108092838
+Part 1, started being processed on Machine2 at  16.938302108092838
+Part 1, Exited the production system at  19.164836452481012
+Part 2 entered the system as information at 20.195988852017297
+Part 3 entered the system as information at 20.195988852017297
+Part 2, released into production at 20.195988852017297
+Part 2, entered Buffer 1 at  20.195988852017297
+Part 4 entered the system as information at 20.195988852017297
+Part 3, released into production at 20.195988852017297
+Part 3, entered Buffer 1 at  20.195988852017297
+Part 2, started being processed on Machine1 at  20.195988852017297
+Part 5 entered the system as information at 20.195988852017297
+Part 4, released into production at 20.195988852017297
+Part 4, entered Buffer 1 at  20.195988852017297
+Part 5, released into production at 20.195988852017297
+Part 5, entered Buffer 1 at  20.195988852017297
+Part 2, entered buffer2 at  21.111185237116054
+Part 2, started being processed on Machine2 at  21.111185237116054
+Part 3, started being processed on Machine1 at  21.111185237116054
+Part 2, Exited the production system at  29.72478109066501
+Part 3, entered buffer2 at  32.29193748688181
+Part 3, started being processed on Machine2 at  32.29193748688181
+Part 4, started being processed on Machine1 at  32.29193748688181
+Part 4, entered buffer2 at  32.984036056940916
+Part 5, started being processed on Machine1 at  32.984036056940916
+Part 6 entered the system as information at 40.916916668571055
+Part 7 entered the system as information at 40.916916668571055
+Part 6, released into production at 40.916916668571055
+Part 6, entered Buffer 1 at  40.916916668571055
+Part 7, released into production at 40.916916668571055
+Part 7, entered Buffer 1 at  40.916916668571055
+Part 3, Exited the production system at  43.71285295155551
+Part 4, started being processed on Machine2 at  43.71285295155551
+Part 5, entered buffer2 at  47.37607200387684
+Part 6, started being processed on Machine1 at  47.37607200387684
+Part 4, Exited the production system at  51.93383511564291
+Part 5, started being processed on Machine2 at  51.93383511564291
+Part 8 entered the system as information at 58.67450706150423
+Part 9 entered the system as information at 58.67450706150423
+Part 8, released into production at 58.67450706150423
+Part 8, entered Buffer 1 at  58.67450706150423
+Part 9, released into production at 58.67450706150423
+Part 9, entered Buffer 1 at  58.67450706150423
+Part 5, Exited the production system at  64.20734219537185
+Part 6, entered buffer2 at  64.42060727417154
+Part 6, started being processed on Machine2 at  64.42060727417154
+Part 7, started being processed on Machine1 at  64.42060727417154
+Part 10 entered the system as information at 73.32963882329989
+Part 11 entered the system as information at 73.32963882329989
+Part 10, released into production at 73.32963882329989
+Part 10, entered Buffer 1 at  73.32963882329989
+Part 12 entered the system as information at 73.32963882329989
+Part 11, released into production at 73.32963882329989
+Part 11, entered Buffer 1 at  73.32963882329989
+Part 12, released into production at 73.32963882329989
+Part 12, entered Buffer 1 at  73.32963882329989
+Part 7, entered buffer2 at  77.00728121478663
+Part 8, started being processed on Machine1 at  77.00728121478663
+Part 6, Exited the production system at  78.58219940328846
+Part 7, started being processed on Machine2 at  78.58219940328846
+Part 7, Exited the production system at  86.09280100519508
+Part 8, entered buffer2 at  92.7457162333004
+Part 8, started being processed on Machine2 at  92.7457162333004
+Part 9, started being processed on Machine1 at  92.7457162333004
+Part 13 entered the system as information at 101.39512564934435
+Part 14 entered the system as information at 101.39512564934435
+Part 13, released into production at 101.39512564934435
+Part 13, entered Buffer 1 at  101.39512564934435
+Part 14, released into production at 101.39512564934435
+Part 14, entered Buffer 1 at  101.39512564934435
+Part 9, entered buffer2 at  101.66513307753561
+Part 10, started being processed on Machine1 at  101.66513307753561
+Part 10, entered buffer2 at  104.6093619744824
+Part 11, started being processed on Machine1 at  104.6093619744824
+Part 8, Exited the production system at  106.50153520625186
+Part 9, started being processed on Machine2 at  106.50153520625186
+Part 11, entered buffer2 at  111.80995108760264
+Part 12, started being processed on Machine1 at  111.80995108760264
+Part 9, Exited the production system at  112.76016020181706
+Part 10, started being processed on Machine2 at  112.76016020181706
+Part 15 entered the system as information at 112.8565577846124
+Part 16 entered the system as information at 112.8565577846124
+Part 15, released into production at 112.8565577846124
+Part 15, entered Buffer 1 at  112.8565577846124
+Part 16, released into production at 112.8565577846124
+Part 16, entered Buffer 1 at  112.8565577846124
+Part 10, Exited the production system at  115.17732367744982
+Part 11, started being processed on Machine2 at  115.17732367744982
+Part 17 entered the system as information at 117.85973452874785
+Part 18 entered the system as information at 117.85973452874785
+Part 17, released into production at 117.85973452874785
+Part 17, entered Buffer 1 at  117.85973452874785
+Part 19 entered the system as information at 117.85973452874785
+Part 18, released into production at 117.85973452874785
+Part 18, entered Buffer 1 at  117.85973452874785
+Part 19, released into production at 117.85973452874785
+Part 19, entered Buffer 1 at  117.85973452874785
+Part 12, entered buffer2 at  122.40163142377713
+Part 13, started being processed on Machine1 at  122.40163142377713
+Part 13, entered buffer2 at  124.69091414103126
+Part 14, started being processed on Machine1 at  124.69091414103126
+Part 14, entered buffer2 at  124.83392387893302
+Part 15, started being processed on Machine1 at  124.83392387893302
+Part 11, Exited the production system at  125.90499219082326
+Part 12, started being processed on Machine2 at  125.90499219082326
+Part 15, entered buffer2 at  126.30570062098262
+Part 16, started being processed on Machine1 at  126.30570062098262
+Part 20 entered the system as information at 127.40258223757981
+Part 21 entered the system as information at 127.40258223757981
+Part 16, entered buffer2 at  131.03017952852068
+Part 17, started being processed on Machine1 at  131.03017952852068
+Part 22 entered the system as information at 135.33008240277422
+Part 12, Exited the production system at  142.99945486876433
+Part 13, started being processed on Machine2 at  142.99945486876433
+Part 17, entered buffer2 at  150.05895117721585
+Part 18, started being processed on Machine1 at  150.05895117721585
+Part 13, Exited the production system at  160.05468181657724
+Part 14, started being processed on Machine2 at  160.05468181657724
+Part 18, entered buffer2 at  160.7851592288058
+Part 19, started being processed on Machine1 at  160.7851592288058
+Part 14, Exited the production system at  165.05235631168847
+Part 15, started being processed on Machine2 at  165.05235631168847
+Part 23 entered the system as information at 165.08037161724383
+Part 24 entered the system as information at 165.08037161724383
+Part 25 entered the system as information at 165.08037161724383
+Part 15, Exited the production system at  167.41496510076252
+Part 16, started being processed on Machine2 at  167.41496510076252
+Part 19, entered buffer2 at  170.93285627457215
+Part 16, Exited the production system at  174.04551872549894
+Part 17, started being processed on Machine2 at  174.04551872549894
+Part 17, Exited the production system at  176.1100346917191
+Part 18, started being processed on Machine2 at  176.1100346917191
+Part 26 entered the system as information at 186.01637859311785
+Part 18, Exited the production system at  188.23909099105109
+Part 19, started being processed on Machine2 at  188.23909099105109
+Part 27 entered the system as information at 201.1196202554516
+Part 28 entered the system as information at 201.1196202554516
+Part 29 entered the system as information at 201.1196202554516
+Part 30 entered the system as information at 201.1196202554516
+Part 31 entered the system as information at 201.1196202554516
+Part 19, Exited the production system at  205.0768653675857
+Part 20, released into production at 210
+Part 20, entered Buffer 1 at  210
+Part 21, released into production at 210
+Part 21, entered Buffer 1 at  210
+Part 22, released into production at 210
+Part 22, entered Buffer 1 at  210
+Part 20, started being processed on Machine1 at  210
+Part 23, released into production at 210
+Part 23, entered Buffer 1 at  210
+Part 24, released into production at 210
+Part 24, entered Buffer 1 at  210
+Part 25, released into production at 210
+Part 25, entered Buffer 1 at  210
+Part 26, released into production at 210
+Part 26, entered Buffer 1 at  210
+Part 27, released into production at 210
+Part 27, entered Buffer 1 at  210
+Part 28, released into production at 210
+Part 28, entered Buffer 1 at  210
+Part 29, released into production at 210
+Part 29, entered Buffer 1 at  210
+Part 30, released into production at 210
+Part 30, entered Buffer 1 at  210
+Part 31, released into production at 210
+Part 31, entered Buffer 1 at  210
+Part 20, entered buffer2 at  224.02745723450354
+Part 20, started being processed on Machine2 at  224.02745723450354
+Part 21, started being processed on Machine1 at  224.02745723450354
+Part 32 entered the system as information at 224.32719832937107
+Part 33 entered the system as information at 224.32719832937107
+Part 32, released into production at 224.32719832937107
+Part 32, entered Buffer 1 at  224.32719832937107
+Part 33, released into production at 224.32719832937107
+Part 33, entered Buffer 1 at  224.32719832937107
+Part 21, entered buffer2 at  242.74199541557476
+Part 22, started being processed on Machine1 at  242.74199541557476
+Part 20, Exited the production system at  243.4145740050586
+Part 21, started being processed on Machine2 at  243.4145740050586
+Part 34 entered the system as information at 249.45988684351323
+Part 21, Exited the production system at  250.06819538209973
+Part 35 entered the system as information at 255.59823860859757
+Part 22, entered buffer2 at  260.4716967888425
+Part 22, started being processed on Machine2 at  260.4716967888425
+Part 23, started being processed on Machine1 at  260.4716967888425
+Part 36 entered the system as information at 271.29632196607173
+Part 23, entered buffer2 at  272.06352777493413
+Part 24, started being processed on Machine1 at  272.06352777493413
+Part 22, Exited the production system at  274.27064415524063
+Part 23, started being processed on Machine2 at  274.27064415524063
+Part 24, entered buffer2 at  279.01130879716277
+Part 25, started being processed on Machine1 at  279.01130879716277
+Part 25, entered buffer2 at  286.5422444335517
+Part 26, started being processed on Machine1 at  286.5422444335517
+Part 23, Exited the production system at  294.15360402174963
+Part 24, started being processed on Machine2 at  294.15360402174963
+Part 24, Exited the production system at  299.5379732677055
+Part 25, started being processed on Machine2 at  299.5379732677055
+Part 26, entered buffer2 at  302.8194984640777
+Part 27, started being processed on Machine1 at  302.8194984640777
+Part 27, entered buffer2 at  307.78559919203923
+Part 28, started being processed on Machine1 at  307.78559919203923
+Part 37 entered the system as information at 312.51257434167553
+Part 25, Exited the production system at  312.79435135982493
+Part 26, started being processed on Machine2 at  312.79435135982493
+Part 28, entered buffer2 at  323.0619038203271
+Part 29, started being processed on Machine1 at  323.0619038203271
+Part 29, entered buffer2 at  329.9020349744422
+Part 30, started being processed on Machine1 at  329.9020349744422
+Part 30, entered buffer2 at  329.98352208198304
+Part 31, started being processed on Machine1 at  329.98352208198304
+Part 26, Exited the production system at  330.75859759204155
+Part 27, started being processed on Machine2 at  330.75859759204155
+Part 31, entered buffer2 at  334.1260142478288
+Part 32, started being processed on Machine1 at  334.1260142478288
+Part 27, Exited the production system at  343.85290325469083
+Part 28, started being processed on Machine2 at  343.85290325469083
+Part 32, entered buffer2 at  347.52033209664825
+Part 33, started being processed on Machine1 at  347.52033209664825
+Part 28, Exited the production system at  349.41858923177483
+Part 29, started being processed on Machine2 at  349.41858923177483
+Part 34, released into production at 360
+Part 34, entered Buffer 1 at  360
+Part 35, released into production at 360
+Part 35, entered Buffer 1 at  360
+Part 36, released into production at 360
+Part 36, entered Buffer 1 at  360
+Part 37, released into production at 360
+Part 37, entered Buffer 1 at  360
+Part 38 entered the system as information at 362.0305982168447
+Part 38, released into production at 362.0305982168447
+Part 38, entered Buffer 1 at  362.0305982168447
+Part 33, entered buffer2 at  364.6771221362265
+Part 34, started being processed on Machine1 at  364.6771221362265
+Part 29, Exited the production system at  368.67270976849073
+Part 30, started being processed on Machine2 at  368.67270976849073
+Part 39 entered the system as information at 374.89887394656125
+Part 39, released into production at 374.89887394656125
+Part 39, entered Buffer 1 at  374.89887394656125
+Part 40 entered the system as information at 376.6804716138458
+Part 40, released into production at 376.6804716138458
+Part 40, entered Buffer 1 at  376.6804716138458
+Part 30, Exited the production system at  379.41676313443537
+Part 31, started being processed on Machine2 at  379.41676313443537
+Part 34, entered buffer2 at  383.6953450904873
+Part 35, started being processed on Machine1 at  383.6953450904873
+Part 31, Exited the production system at  385.9137016548046
+Part 32, started being processed on Machine2 at  385.9137016548046
+Part 35, entered buffer2 at  387.72044109421654
+Part 36, started being processed on Machine1 at  387.72044109421654
+Part 41 entered the system as information at 390.19870500643964
+Part 42 entered the system as information at 390.19870500643964
+Part 43 entered the system as information at 390.19870500643964
+Part 44 entered the system as information at 390.19870500643964
+Part 36, entered buffer2 at  393.05263228377066
+Part 37, started being processed on Machine1 at  393.05263228377066
+Part 37, entered buffer2 at  394.18973627364164
+Part 38, started being processed on Machine1 at  394.18973627364164
+Part 32, Exited the production system at  402.21752321047705
+Part 33, started being processed on Machine2 at  402.21752321047705
+Part 38, entered buffer2 at  403.06433896364194
+Part 39, started being processed on Machine1 at  403.06433896364194
+Part 33, Exited the production system at  406.60404724802055
+Part 41, released into production at 406.60404724802055
+Part 41, entered Buffer 1 at  406.60404724802055
+Part 34, started being processed on Machine2 at  406.60404724802055
+Part 45 entered the system as information at 408.6587212628311
+Part 46 entered the system as information at 408.6587212628311
+Part 39, entered buffer2 at  408.80401395607214
+Part 40, started being processed on Machine1 at  408.80401395607214
+Part 34, Exited the production system at  424.45037962151474
+Part 35, started being processed on Machine2 at  424.45037962151474
+Part 40, entered buffer2 at  427.6788987913401
+Part 41, started being processed on Machine1 at  427.6788987913401
+Part 47 entered the system as information at 429.6376911497038
+Part 35, Exited the production system at  432.22445764418165
+Part 36, started being processed on Machine2 at  432.22445764418165
+Part 36, Exited the production system at  432.3928480655244
+Part 37, started being processed on Machine2 at  432.3928480655244
+Part 41, entered buffer2 at  438.11026718283676
+Part 48 entered the system as information at 443.0830057611161
+Part 49 entered the system as information at 443.0830057611161
+Part 50 entered the system as information at 443.0830057611161
+Part 51 entered the system as information at 443.4955652586706
+Part 52 entered the system as information at 443.4955652586706
+Part 53 entered the system as information at 443.4955652586706
+Part 54 entered the system as information at 443.4955652586706
+Part 37, Exited the production system at  444.93855704309095
+Part 38, started being processed on Machine2 at  444.93855704309095
+Part 38, Exited the production system at  451.9528633773206
+Part 39, started being processed on Machine2 at  451.9528633773206
+Part 55 entered the system as information at 456.8110461872315
+Part 56 entered the system as information at 456.8110461872315
+Part 39, Exited the production system at  464.65057110104294
+Part 40, started being processed on Machine2 at  464.65057110104294
+Part 40, Exited the production system at  467.97690403461485
+Part 41, started being processed on Machine2 at  467.97690403461485
+Part 41, Exited the production system at  475.63587280323486
+Part 57 entered the system as information at 476.09508402685265
+Part 42, released into production at 480
+Part 42, entered Buffer 1 at  480
+Part 43, released into production at 480
+Part 43, entered Buffer 1 at  480
+Part 42, started being processed on Machine1 at  480
+Part 44, released into production at 480
+Part 44, entered Buffer 1 at  480
+Part 45, released into production at 480
+Part 45, entered Buffer 1 at  480
+Part 46, released into production at 480
+Part 46, entered Buffer 1 at  480
+Part 47, released into production at 480
+Part 47, entered Buffer 1 at  480
+Part 48, released into production at 480
+Part 48, entered Buffer 1 at  480
+Part 49, released into production at 480
+Part 49, entered Buffer 1 at  480
+Part 50, released into production at 480
+Part 50, entered Buffer 1 at  480
+Part 51, released into production at 480
+Part 51, entered Buffer 1 at  480
+Part 52, released into production at 480
+Part 52, entered Buffer 1 at  480
+Part 53, released into production at 480
+Part 53, entered Buffer 1 at  480
+Part 54, released into production at 480
+Part 54, entered Buffer 1 at  480
+Part 55, released into production at 480
+Part 55, entered Buffer 1 at  480
+Part 56, released into production at 480
+Part 56, entered Buffer 1 at  480
+Part 58 entered the system as information at 489.2238931077861
+Part 42, entered buffer2 at  491.7581239023648
+Part 42, started being processed on Machine2 at  491.7581239023648
+Part 43, started being processed on Machine1 at  491.7581239023648
+Part 42, Exited the production system at  500.0249199741326
+Part 57, released into production at 500.0249199741326
+Part 57, entered Buffer 1 at  500.0249199741326
+Part 43, entered buffer2 at  503.6661977781382
+Part 43, started being processed on Machine2 at  503.6661977781382
+Part 44, started being processed on Machine1 at  503.6661977781382
+Part 44, entered buffer2 at  508.4200368789275
+Part 45, started being processed on Machine1 at  508.4200368789275
+Part 59 entered the system as information at 510.14910754924426
+Part 60 entered the system as information at 513.6705979015402
+Part 61 entered the system as information at 513.6705979015402
+Part 43, Exited the production system at  521.3637584235368
+Part 44, started being processed on Machine2 at  521.3637584235368
+Part 45, entered buffer2 at  521.6155001432669
+Part 46, started being processed on Machine1 at  521.6155001432669
+Part 46, entered buffer2 at  535.7714634511186
+Part 47, started being processed on Machine1 at  535.7714634511186
+Part 44, Exited the production system at  537.5632994031099
+Part 45, started being processed on Machine2 at  537.5632994031099
+Part 62 entered the system as information at 542.8432508362332
+Part 63 entered the system as information at 542.8432508362332
+Part 47, entered buffer2 at  549.180012961607
+Part 48, started being processed on Machine1 at  549.180012961607
+Part 45, Exited the production system at  550.3713813760073
+Part 46, started being processed on Machine2 at  550.3713813760073
+Part 46, Exited the production system at  553.2566497888482
+Part 47, started being processed on Machine2 at  553.2566497888482
+Part 47, Exited the production system at  559.5041156220566
+Part 48, entered buffer2 at  563.8292363905916
+Part 48, started being processed on Machine2 at  563.8292363905916
+Part 49, started being processed on Machine1 at  563.8292363905916
+Part 48, Exited the production system at  563.967269134908
+Part 49, entered buffer2 at  564.5967706771446
+Part 49, started being processed on Machine2 at  564.5967706771446
+Part 50, started being processed on Machine1 at  564.5967706771446
+Part 64 entered the system as information at 571.4312520714906
+Part 65 entered the system as information at 571.4312520714906
+Part 50, entered buffer2 at  577.6582105007278
+Part 51, started being processed on Machine1 at  577.6582105007278
+Part 66 entered the system as information at 578.8401704560123
+Part 67 entered the system as information at 578.8401704560123
+Part 51, entered buffer2 at  580.8667857510434
+Part 52, started being processed on Machine1 at  580.8667857510434
+Part 49, Exited the production system at  584.531341539317
+Part 50, started being processed on Machine2 at  584.531341539317
+Part 50, Exited the production system at  587.993381321806
+Part 51, started being processed on Machine2 at  587.993381321806
+Part 51, Exited the production system at  589.7436066125813
+Part 52, entered buffer2 at  595.2324649763051
+Part 52, started being processed on Machine2 at  595.2324649763051
+Part 53, started being processed on Machine1 at  595.2324649763051
+Part 53, entered buffer2 at  597.5769843578809
+Part 54, started being processed on Machine1 at  597.5769843578809
+Part 54, entered buffer2 at  613.5058305318396
+Part 55, started being processed on Machine1 at  613.5058305318396
+Part 68 entered the system as information at 614.0851246127029
+Part 52, Exited the production system at  614.8463664339264
+Part 53, started being processed on Machine2 at  614.8463664339264
+Part 69 entered the system as information at 616.9494734486422
+Part 53, Exited the production system at  620.8621367644554
+Part 54, started being processed on Machine2 at  620.8621367644554
+Part 54, Exited the production system at  624.7836417112495
+Part 55, entered buffer2 at  626.291713695836
+Part 55, started being processed on Machine2 at  626.291713695836
+Part 56, started being processed on Machine1 at  626.291713695836
+Part 56, entered buffer2 at  636.0054471260167
+Part 57, started being processed on Machine1 at  636.0054471260167
+Part 55, Exited the production system at  638.2857660919918
+Part 56, started being processed on Machine2 at  638.2857660919918
+Part 56, Exited the production system at  640.9640136046138
+Part 70 entered the system as information at 643.1348960091048
+Part 71 entered the system as information at 645.7599770377227
+Part 72 entered the system as information at 648.8483046603991
+Part 73 entered the system as information at 648.8483046603991
+Part 57, entered buffer2 at  655.4930442105034
+Part 57, started being processed on Machine2 at  655.4930442105034
+Part 74 entered the system as information at 669.621126439804
+Part 57, Exited the production system at  674.2245330832494
+Part 58, released into production at 690
+Part 58, entered Buffer 1 at  690
+Part 59, released into production at 690
+Part 59, entered Buffer 1 at  690
+Part 60, released into production at 690
+Part 60, entered Buffer 1 at  690
+Part 61, released into production at 690
+Part 61, entered Buffer 1 at  690
+Part 58, started being processed on Machine1 at  690
+Part 62, released into production at 690
+Part 62, entered Buffer 1 at  690
+Part 63, released into production at 690
+Part 63, entered Buffer 1 at  690
+Part 64, released into production at 690
+Part 64, entered Buffer 1 at  690
+Part 65, released into production at 690
+Part 65, entered Buffer 1 at  690
+Part 75 entered the system as information at 696.4503238736958
+Part 76 entered the system as information at 698.448095876178
+Part 58, entered buffer2 at  708.893926777374
+Part 58, started being processed on Machine2 at  708.893926777374
+Part 59, started being processed on Machine1 at  708.893926777374
+Part 59, entered buffer2 at  714.3278793389788
+Part 60, started being processed on Machine1 at  714.3278793389788
+Part 77 entered the system as information at 721.0328262873257
+Part 78 entered the system as information at 721.0328262873257
+Part 79 entered the system as information at 721.0328262873257
+Part 80 entered the system as information at 721.0328262873257
+Part 81 entered the system as information at 721.0328262873257
+Part 82 entered the system as information at 721.0328262873257
+Part 60, entered buffer2 at  721.2031756992939
+Part 61, started being processed on Machine1 at  721.2031756992939
+Part 58, Exited the production system at  728.2383911347657
+Part 59, started being processed on Machine2 at  728.2383911347657
+Part 61, entered buffer2 at  735.2721185003098
+Part 62, started being processed on Machine1 at  735.2721185003098
+Part 59, Exited the production system at  746.7349015271722
+Part 60, started being processed on Machine2 at  746.7349015271722
+Part 62, entered buffer2 at  748.3788618535772
+Part 63, started being processed on Machine1 at  748.3788618535772
+Part 63, entered buffer2 at  754.4216216093862
+Part 64, started being processed on Machine1 at  754.4216216093862
+Part 64, entered buffer2 at  755.8346069636601
+Part 65, started being processed on Machine1 at  755.8346069636601
+Part 83 entered the system as information at 756.6718775208693
+Part 84 entered the system as information at 756.6718775208693
+Part 65, entered buffer2 at  756.9455734104419
+Part 60, Exited the production system at  764.4374020122442
+Part 61, started being processed on Machine2 at  764.4374020122442
+Part 85 entered the system as information at 767.7570116335944
+Part 86 entered the system as information at 767.7570116335944
+Part 87 entered the system as information at 767.7570116335944
+Part 88 entered the system as information at 767.7570116335944
+Part 89 entered the system as information at 767.7570116335944
+Part 90 entered the system as information at 781.4564921579334
+Part 61, Exited the production system at  782.7210837592168
+Part 62, started being processed on Machine2 at  782.7210837592168
+Part 91 entered the system as information at 785.3002511666072
+Part 92 entered the system as information at 785.3002511666072
+Part 62, Exited the production system at  798.7153459721062
+Part 63, started being processed on Machine2 at  798.7153459721062
+Part 66, released into production at 810
+Part 66, entered Buffer 1 at  810
+Part 67, released into production at 810
+Part 67, entered Buffer 1 at  810
+Part 66, started being processed on Machine1 at  810
+Part 68, released into production at 810
+Part 68, entered Buffer 1 at  810
+Part 69, released into production at 810
+Part 69, entered Buffer 1 at  810
+Part 70, released into production at 810
+Part 70, entered Buffer 1 at  810
+Part 71, released into production at 810
+Part 71, entered Buffer 1 at  810
+Part 72, released into production at 810
+Part 72, entered Buffer 1 at  810
+Part 73, released into production at 810
+Part 73, entered Buffer 1 at  810
+Part 74, released into production at 810
+Part 74, entered Buffer 1 at  810
+Part 75, released into production at 810
+Part 75, entered Buffer 1 at  810
+Part 76, released into production at 810
+Part 76, entered Buffer 1 at  810
+Part 77, released into production at 810
+Part 77, entered Buffer 1 at  810
+Part 78, released into production at 810
+Part 78, entered Buffer 1 at  810
+Part 79, released into production at 810
+Part 79, entered Buffer 1 at  810
+Part 80, released into production at 810
+Part 80, entered Buffer 1 at  810
+Part 81, released into production at 810
+Part 81, entered Buffer 1 at  810
+Part 82, released into production at 810
+Part 82, entered Buffer 1 at  810
+Part 83, released into production at 810
+Part 83, entered Buffer 1 at  810
+Part 63, Exited the production system at  814.208731047313
+Part 84, released into production at 814.208731047313
+Part 84, entered Buffer 1 at  814.208731047313
+Part 64, started being processed on Machine2 at  814.208731047313
+Part 64, Exited the production system at  827.5457669820001
+Part 85, released into production at 827.5457669820001
+Part 85, entered Buffer 1 at  827.5457669820001
+Part 65, started being processed on Machine2 at  827.5457669820001
+Part 66, entered buffer2 at  828.0027429640024
+Part 67, started being processed on Machine1 at  828.0027429640024
+Part 93 entered the system as information at 833.1991749847822
+Part 65, Exited the production system at  837.9860750673862
+Part 86, released into production at 837.9860750673862
+Part 86, entered Buffer 1 at  837.9860750673862
+Part 66, started being processed on Machine2 at  837.9860750673862
+Part 66, Exited the production system at  839.5218231916195
+Part 87, released into production at 839.5218231916195
+Part 87, entered Buffer 1 at  839.5218231916195
+Part 67, entered buffer2 at  846.094365744229
+Part 67, started being processed on Machine2 at  846.094365744229
+Part 68, started being processed on Machine1 at  846.094365744229
+Part 68, entered buffer2 at  846.9332796168969
+Part 69, started being processed on Machine1 at  846.9332796168969
+Part 69, entered buffer2 at  851.5848793624122
+Part 70, started being processed on Machine1 at  851.5848793624122
+Part 67, Exited the production system at  854.92000915831
+Part 68, started being processed on Machine2 at  854.92000915831
+Part 70, entered buffer2 at  855.3736341294206
+Part 71, started being processed on Machine1 at  855.3736341294206
+Part 68, Exited the production system at  867.0860041530066
+Part 69, started being processed on Machine2 at  867.0860041530066
+Part 71, entered buffer2 at  869.3002553096563
+Part 72, started being processed on Machine1 at  869.3002553096563
+Part 88, released into production at 870
+Part 88, entered Buffer 1 at  870
+Part 89, released into production at 870
+Part 89, entered Buffer 1 at  870
+Part 90, released into production at 870
+Part 90, entered Buffer 1 at  870
+Part 91, released into production at 870
+Part 91, entered Buffer 1 at  870
+Part 92, released into production at 870
+Part 92, entered Buffer 1 at  870
+Part 93, released into production at 870
+Part 93, entered Buffer 1 at  870
+Part 94 entered the system as information at 872.0886141401892
+Part 95 entered the system as information at 872.0886141401892
+Part 94, released into production at 872.0886141401892
+Part 94, entered Buffer 1 at  872.0886141401892
+Part 96 entered the system as information at 872.0886141401892
+Part 95, released into production at 872.0886141401892
+Part 95, entered Buffer 1 at  872.0886141401892
+Part 97 entered the system as information at 872.0886141401892
+Part 96, released into production at 872.0886141401892
+Part 96, entered Buffer 1 at  872.0886141401892
+Part 97, released into production at 872.0886141401892
+Part 97, entered Buffer 1 at  872.0886141401892
+Part 72, entered buffer2 at  873.8405762033374
+Part 73, started being processed on Machine1 at  873.8405762033374
+Part 69, Exited the production system at  878.8281071638279
+Part 70, started being processed on Machine2 at  878.8281071638279
+Part 70, Exited the production system at  880.9571014935743
+Part 71, started being processed on Machine2 at  880.9571014935743
+Part 71, Exited the production system at  885.2848736625481
+Part 72, started being processed on Machine2 at  885.2848736625481
+Part 73, entered buffer2 at  887.83664350288
+Part 74, started being processed on Machine1 at  887.83664350288
+Part 74, entered buffer2 at  890.3229933649974
+Part 75, started being processed on Machine1 at  890.3229933649974
+Part 98 entered the system as information at 891.142841358284
+Part 98, released into production at 891.142841358284
+Part 98, entered Buffer 1 at  891.142841358284
+Part 99 entered the system as information at 894.2810895445624
+Part 99, released into production at 894.2810895445624
+Part 99, entered Buffer 1 at  894.2810895445624
+Part 72, Exited the production system at  895.1433002843689
+Part 73, started being processed on Machine2 at  895.1433002843689
+Part 75, entered buffer2 at  895.4789408405071
+Part 76, started being processed on Machine1 at  895.4789408405071
+Part 76, entered buffer2 at  903.053485660041
+Part 77, started being processed on Machine1 at  903.053485660041
+Part 100 entered the system as information at 904.7493197771205
+Part 101 entered the system as information at 910.2704930103322
+Part 73, Exited the production system at  910.5375810825242
+Part 74, started being processed on Machine2 at  910.5375810825242
+Part 77, entered buffer2 at  914.5120128865035
+Part 78, started being processed on Machine1 at  914.5120128865035
+Part 74, Exited the production system at  922.3997205676588
+Part 75, started being processed on Machine2 at  922.3997205676588
+Part 75, Exited the production system at  923.2630921184187
+Part 76, started being processed on Machine2 at  923.2630921184187
+Part 78, entered buffer2 at  928.4798607050868
+Part 79, started being processed on Machine1 at  928.4798607050868
+Part 79, entered buffer2 at  928.6538898804498
+Part 80, started being processed on Machine1 at  928.6538898804498
+Part 76, Exited the production system at  939.5409950854917
+Part 77, started being processed on Machine2 at  939.5409950854917
+Part 77, Exited the production system at  940.8606410728272
+Part 78, started being processed on Machine2 at  940.8606410728272
+Part 102 entered the system as information at 944.2987532262313
+Part 80, entered buffer2 at  948.1471584344104
+Part 81, started being processed on Machine1 at  948.1471584344104
+Part 81, entered buffer2 at  956.5190504255951
+Part 82, started being processed on Machine1 at  956.5190504255951
+Part 78, Exited the production system at  957.9612050708456
+Part 79, started being processed on Machine2 at  957.9612050708456
+Part 103 entered the system as information at 960.951034662843
+Part 104 entered the system as information at 960.951034662843
+Part 82, entered buffer2 at  968.6384915278292
+Part 83, started being processed on Machine1 at  968.6384915278292
+Part 83, entered buffer2 at  972.7213799428312
+Part 84, started being processed on Machine1 at  972.7213799428312
+Part 79, Exited the production system at  976.8444415631055
+Part 80, started being processed on Machine2 at  976.8444415631055
+Part 105 entered the system as information at 977.1635873098626
+Part 106 entered the system as information at 977.1635873098626
+Part 80, Exited the production system at  978.6361938002077
+Part 81, started being processed on Machine2 at  978.6361938002077
+Part 84, entered buffer2 at  988.7756726552394
+Part 85, started being processed on Machine1 at  988.7756726552394
+Part 107 entered the system as information at 995.1711127085215
+Part 108 entered the system as information at 995.1711127085215
+Part 81, Exited the production system at  998.3091914323574
+Part 82, started being processed on Machine2 at  998.3091914323574
+Part 82, Exited the production system at  998.8890457949165
+Part 83, started being processed on Machine2 at  998.8890457949165
+Part 83, Exited the production system at  1002.7034847651707
+Part 84, started being processed on Machine2 at  1002.7034847651707
+Part 84, Exited the production system at  1003.555557226109
+Part 85, entered buffer2 at  1007.2463807396039
+Part 85, started being processed on Machine2 at  1007.2463807396039
+Part 86, started being processed on Machine1 at  1007.2463807396039
+Part 109 entered the system as information at 1010.4061122834062
+Part 85, Exited the production system at  1011.3860537238613
+Part 86, entered buffer2 at  1011.7611860847039
+Part 86, started being processed on Machine2 at  1011.7611860847039
+Part 87, started being processed on Machine1 at  1011.7611860847039
+Part 110 entered the system as information at 1018.3853903499636
+Part 111 entered the system as information at 1018.3853903499636
+Part 112 entered the system as information at 1018.3853903499636
+Part 87, entered buffer2 at  1019.759444320553
+Part 88, started being processed on Machine1 at  1019.759444320553
+Part 86, Exited the production system at  1021.7906311404432
+Part 87, started being processed on Machine2 at  1021.7906311404432
+Part 113 entered the system as information at 1028.6277478061118
+Part 87, Exited the production system at  1030.657094497511
+Part 88, entered buffer2 at  1037.507974369282
+Part 88, started being processed on Machine2 at  1037.507974369282
+Part 89, started being processed on Machine1 at  1037.507974369282
+Part 88, Exited the production system at  1042.888026179956
+Part 89, entered buffer2 at  1043.8831293317587
+Part 89, started being processed on Machine2 at  1043.8831293317587
+Part 90, started being processed on Machine1 at  1043.8831293317587
+Part 89, Exited the production system at  1044.454988502994
+Part 114 entered the system as information at 1054.598330013819
+Part 115 entered the system as information at 1057.105509365652
+Part 90, entered buffer2 at  1063.6776767239253
+Part 90, started being processed on Machine2 at  1063.6776767239253
+Part 91, started being processed on Machine1 at  1063.6776767239253
+Part 90, Exited the production system at  1068.954014401531
+Part 91, entered buffer2 at  1071.9591630152174
+Part 91, started being processed on Machine2 at  1071.9591630152174
+Part 92, started being processed on Machine1 at  1071.9591630152174
+Part 91, Exited the production system at  1077.3504481607642
+Part 92, entered buffer2 at  1082.6996701927178
+Part 92, started being processed on Machine2 at  1082.6996701927178
+Part 93, started being processed on Machine1 at  1082.6996701927178
+Part 92, Exited the production system at  1085.272371152212
+Part 116 entered the system as information at 1089.9918358460702
+Part 117 entered the system as information at 1089.9918358460702
+Part 118 entered the system as information at 1089.9918358460702
+Part 119 entered the system as information at 1089.9918358460702
+Part 120 entered the system as information at 1089.9918358460702
+Part 93, entered buffer2 at  1100.53139007245
+Part 93, started being processed on Machine2 at  1100.53139007245
+Part 94, started being processed on Machine1 at  1100.53139007245
+Part 93, Exited the production system at  1102.5829270691725
+Part 94, entered buffer2 at  1110.0070094032815
+Part 94, started being processed on Machine2 at  1110.0070094032815
+Part 95, started being processed on Machine1 at  1110.0070094032815
+Part 121 entered the system as information at 1110.2243271862756
+Part 122 entered the system as information at 1110.2243271862756
+Part 123 entered the system as information at 1110.2243271862756
+Part 124 entered the system as information at 1111.4213289144016
+Part 125 entered the system as information at 1111.4213289144016
+Part 95, entered buffer2 at  1124.002718666675
+Part 96, started being processed on Machine1 at  1124.002718666675
+Part 94, Exited the production system at  1124.5184884578343
+Part 95, started being processed on Machine2 at  1124.5184884578343
+Part 95, Exited the production system at  1126.4948588879029
+Part 96, entered buffer2 at  1134.9077434808294
+Part 96, started being processed on Machine2 at  1134.9077434808294
+Part 97, started being processed on Machine1 at  1134.9077434808294
+Part 97, entered buffer2 at  1144.9597965933433
+Part 98, started being processed on Machine1 at  1144.9597965933433
+Part 96, Exited the production system at  1148.1153898423186
+Part 97, started being processed on Machine2 at  1148.1153898423186
+Part 126 entered the system as information at 1149.4690814833498
+Part 127 entered the system as information at 1152.3521694103042
+Part 98, entered buffer2 at  1156.9279099670875
+Part 99, started being processed on Machine1 at  1156.9279099670875
+Part 97, Exited the production system at  1159.5877764943602
+Part 98, started being processed on Machine2 at  1159.5877764943602
+Part 98, Exited the production system at  1166.0238325322211
+Part 128 entered the system as information at 1169.509249242322
+Part 99, entered buffer2 at  1175.0312179444256
+Part 99, started being processed on Machine2 at  1175.0312179444256
+Part 99, Exited the production system at  1186.2981850880444
+Part 100, released into production at 1186.2981850880444
+Part 100, entered Buffer 1 at  1186.2981850880444
+Part 100, started being processed on Machine1 at  1186.2981850880444
+Part 129 entered the system as information at 1192.130766761245
+Part 130 entered the system as information at 1192.130766761245
+Part 131 entered the system as information at 1200.1917060112087
+Part 132 entered the system as information at 1200.1917060112087
+Part 133 entered the system as information at 1200.1917060112087
+Part 134 entered the system as information at 1200.1917060112087
+Part 135 entered the system as information at 1200.1917060112087
+Part 136 entered the system as information at 1200.1917060112087
+Part 100, entered buffer2 at  1201.9834864380823
+Part 100, started being processed on Machine2 at  1201.9834864380823
+Part 100, Exited the production system at  1206.635054208852
+Part 137 entered the system as information at 1212.050661328711
+Part 138 entered the system as information at 1212.050661328711
+Part 139 entered the system as information at 1212.050661328711
+Part 140 entered the system as information at 1220.2882169018378
+Part 141 entered the system as information at 1220.2882169018378
+Part 142 entered the system as information at 1220.2882169018378
+Part 143 entered the system as information at 1233.8313600038678
+Part 144 entered the system as information at 1233.8313600038678
+Part 145 entered the system as information at 1241.6716685225313
+Part 101, released into production at 1260
+Part 101, entered Buffer 1 at  1260
+Part 102, released into production at 1260
+Part 102, entered Buffer 1 at  1260
+Part 103, released into production at 1260
+Part 103, entered Buffer 1 at  1260
+Part 101, started being processed on Machine1 at  1260
+Part 104, released into production at 1260
+Part 104, entered Buffer 1 at  1260
+Part 105, released into production at 1260
+Part 105, entered Buffer 1 at  1260
+Part 106, released into production at 1260
+Part 106, entered Buffer 1 at  1260
+Part 107, released into production at 1260
+Part 107, entered Buffer 1 at  1260
+Part 108, released into production at 1260
+Part 108, entered Buffer 1 at  1260
+Part 109, released into production at 1260
+Part 109, entered Buffer 1 at  1260
+Part 110, released into production at 1260
+Part 110, entered Buffer 1 at  1260
+Part 111, released into production at 1260
+Part 111, entered Buffer 1 at  1260
+Part 112, released into production at 1260
+Part 112, entered Buffer 1 at  1260
+Part 113, released into production at 1260
+Part 113, entered Buffer 1 at  1260
+Part 114, released into production at 1260
+Part 114, entered Buffer 1 at  1260
+Part 115, released into production at 1260
+Part 115, entered Buffer 1 at  1260
+Part 116, released into production at 1260
+Part 116, entered Buffer 1 at  1260
+Part 117, released into production at 1260
+Part 117, entered Buffer 1 at  1260
+Part 118, released into production at 1260
+Part 118, entered Buffer 1 at  1260
+Part 119, released into production at 1260
+Part 119, entered Buffer 1 at  1260
+Part 120, released into production at 1260
+Part 120, entered Buffer 1 at  1260
+Part 121, released into production at 1260
+Part 121, entered Buffer 1 at  1260
+Part 122, released into production at 1260
+Part 122, entered Buffer 1 at  1260
+Part 123, released into production at 1260
+Part 123, entered Buffer 1 at  1260
+Part 124, released into production at 1260
+Part 124, entered Buffer 1 at  1260
+Part 125, released into production at 1260
+Part 125, entered Buffer 1 at  1260
+Part 126, released into production at 1260
+Part 126, entered Buffer 1 at  1260
+Part 127, released into production at 1260
+Part 127, entered Buffer 1 at  1260
+Part 128, released into production at 1260
+Part 128, entered Buffer 1 at  1260
+Part 129, released into production at 1260
+Part 129, entered Buffer 1 at  1260
+Part 130, released into production at 1260
+Part 130, entered Buffer 1 at  1260
+Part 131, released into production at 1260
+Part 131, entered Buffer 1 at  1260
+Part 132, released into production at 1260
+Part 132, entered Buffer 1 at  1260
+Part 146 entered the system as information at 1263.4440813196252
+Part 101, entered buffer2 at  1273.432973069273
+Part 101, started being processed on Machine2 at  1273.432973069273
+Part 102, started being processed on Machine1 at  1273.432973069273
+Part 101, Exited the production system at  1280.6902629515116
+Part 133, released into production at 1280.6902629515116
+Part 133, entered Buffer 1 at  1280.6902629515116
+Part 102, entered buffer2 at  1289.743326666684
+Part 102, started being processed on Machine2 at  1289.743326666684
+Part 103, started being processed on Machine1 at  1289.743326666684
+Part 103, entered buffer2 at  1303.4033549315623
+Part 104, started being processed on Machine1 at  1303.4033549315623
+Part 147 entered the system as information at 1304.4701951128325
+Part 148 entered the system as information at 1304.4701951128325
+Part 149 entered the system as information at 1304.4701951128325
+Part 150 entered the system as information at 1307.6807743001134
+Part 102, Exited the production system at  1308.7472596574637
+Part 103, started being processed on Machine2 at  1308.7472596574637
+Part 103, Exited the production system at  1312.6747247691167
+Part 104, entered buffer2 at  1318.5941864631761
+Part 104, started being processed on Machine2 at  1318.5941864631761
+Part 105, started being processed on Machine1 at  1318.5941864631761
+Part 151 entered the system as information at 1325.3125505347848
+Part 152 entered the system as information at 1327.749782602173
+Part 153 entered the system as information at 1327.749782602173
+Part 154 entered the system as information at 1327.749782602173
+Part 105, entered buffer2 at  1332.6500481440603
+Part 106, started being processed on Machine1 at  1332.6500481440603
+Part 104, Exited the production system at  1336.8734118427367
+Part 105, started being processed on Machine2 at  1336.8734118427367
+Part 155 entered the system as information at 1337.5713999983948
+Part 106, entered buffer2 at  1343.806301860174
+Part 107, started being processed on Machine1 at  1343.806301860174
+Part 105, Exited the production system at  1350.5189781155075
+Part 106, started being processed on Machine2 at  1350.5189781155075
+Part 156 entered the system as information at 1353.5162842912525
+Part 157 entered the system as information at 1353.5162842912525
+Part 106, Exited the production system at  1354.9103050156325
+Part 107, entered buffer2 at  1358.2261838510265
+Part 107, started being processed on Machine2 at  1358.2261838510265
+Part 108, started being processed on Machine1 at  1358.2261838510265
+Part 158 entered the system as information at 1367.0697816025381
+Part 159 entered the system as information at 1367.0697816025381
+Part 108, entered buffer2 at  1367.6675800084786
+Part 109, started being processed on Machine1 at  1367.6675800084786
+Part 107, Exited the production system at  1373.6112294201694
+Part 108, started being processed on Machine2 at  1373.6112294201694
+Part 109, entered buffer2 at  1375.9540895022449
+Part 110, started being processed on Machine1 at  1375.9540895022449
+Part 110, entered buffer2 at  1379.4782271761383
+Part 111, started being processed on Machine1 at  1379.4782271761383
+Part 108, Exited the production system at  1386.3952343066874
+Part 109, started being processed on Machine2 at  1386.3952343066874
+Part 109, Exited the production system at  1389.9461526707123
+Part 110, started being processed on Machine2 at  1389.9461526707123
+Part 111, entered buffer2 at  1393.5344413427715
+Part 112, started being processed on Machine1 at  1393.5344413427715
+Part 112, entered buffer2 at  1405.0865314083508
+Part 113, started being processed on Machine1 at  1405.0865314083508
+Part 113, entered buffer2 at  1406.27977341278
+Part 114, started being processed on Machine1 at  1406.27977341278
+Part 110, Exited the production system at  1409.476670641672
+Part 111, started being processed on Machine2 at  1409.476670641672
+Part 111, Exited the production system at  1409.9568955032923
+Part 112, started being processed on Machine2 at  1409.9568955032923
+Part 112, Exited the production system at  1419.9174767732793
+Part 113, started being processed on Machine2 at  1419.9174767732793
+Part 114, entered buffer2 at  1420.6741498727347
+Part 115, started being processed on Machine1 at  1420.6741498727347
+Part 160 entered the system as information at 1422.3467257938587
+Part 115, entered buffer2 at  1426.4374769465076
+Part 116, started being processed on Machine1 at  1426.4374769465076
+Part 161 entered the system as information at 1427.223953038715
+Part 116, entered buffer2 at  1432.1238166550397
+Part 117, started being processed on Machine1 at  1432.1238166550397
+Part 113, Exited the production system at  1438.3595808897126
+Part 114, started being processed on Machine2 at  1438.3595808897126
+Part 114, Exited the production system at  1446.0416647394902
+Part 115, started being processed on Machine2 at  1446.0416647394902
+Part 117, entered buffer2 at  1446.137524963373
+Part 118, started being processed on Machine1 at  1446.137524963373
+Part 115, Exited the production system at  1446.9541515039134
+Part 116, started being processed on Machine2 at  1446.9541515039134
+Part 116, Exited the production system at  1450.1317774384008
+Part 117, started being processed on Machine2 at  1450.1317774384008
+Part 118, entered buffer2 at  1452.5700059954222
+Part 119, started being processed on Machine1 at  1452.5700059954222
+Part 119, entered buffer2 at  1458.5408250927899
+Part 120, started being processed on Machine1 at  1458.5408250927899
+Part 162 entered the system as information at 1461.4197172388742
+Part 120, entered buffer2 at  1462.6849992129908
+Part 121, started being processed on Machine1 at  1462.6849992129908
+Part 117, Exited the production system at  1464.576298588204
+Part 118, started being processed on Machine2 at  1464.576298588204
+Part 118, Exited the production system at  1476.654626851079
+Part 119, started being processed on Machine2 at  1476.654626851079
+Part 121, entered buffer2 at  1478.9934149759229
+Part 122, started being processed on Machine1 at  1478.9934149759229
+Part 119, Exited the production system at  1486.3673151729292
+Part 120, started being processed on Machine2 at  1486.3673151729292
+Part 163 entered the system as information at 1492.137583691822
+Part 164 entered the system as information at 1492.137583691822
+Part 165 entered the system as information at 1492.283859184012
+Part 122, entered buffer2 at  1495.4224425757893
+Part 123, started being processed on Machine1 at  1495.4224425757893
+Part 120, Exited the production system at  1499.911307162946
+Part 121, started being processed on Machine2 at  1499.911307162946
+Part 121, Exited the production system at  1504.9221782149402
+Part 122, started being processed on Machine2 at  1504.9221782149402
+Part 123, entered buffer2 at  1505.8571353783605
+Part 124, started being processed on Machine1 at  1505.8571353783605
+Part 124, entered buffer2 at  1505.9782531306969
+Part 125, started being processed on Machine1 at  1505.9782531306969
+Part 166 entered the system as information at 1511.585093375005
+Part 125, entered buffer2 at  1512.720330311509
+Part 126, started being processed on Machine1 at  1512.720330311509
+Part 122, Exited the production system at  1516.9672638892423
+Part 123, started being processed on Machine2 at  1516.9672638892423
+Part 167 entered the system as information at 1518.2453890846402
+Part 126, entered buffer2 at  1529.2216272631736
+Part 127, started being processed on Machine1 at  1529.2216272631736
+Part 123, Exited the production system at  1532.8784753808175
+Part 124, started being processed on Machine2 at  1532.8784753808175
+Part 127, entered buffer2 at  1547.4563514962497
+Part 128, started being processed on Machine1 at  1547.4563514962497
+Part 168 entered the system as information at 1547.6400355446158
+Part 124, Exited the production system at  1549.3089050996687
+Part 125, started being processed on Machine2 at  1549.3089050996687
+Part 128, entered buffer2 at  1551.1250846699686
+Part 129, started being processed on Machine1 at  1551.1250846699686
+Part 125, Exited the production system at  1554.0554828934874
+Part 126, started being processed on Machine2 at  1554.0554828934874
+Part 126, Exited the production system at  1556.1203253837737
+Part 127, started being processed on Machine2 at  1556.1203253837737
+Part 127, Exited the production system at  1564.62435564161
+Part 128, started being processed on Machine2 at  1564.62435564161
+Part 129, entered buffer2 at  1565.990441553049
+Part 130, started being processed on Machine1 at  1565.990441553049
+Part 169 entered the system as information at 1568.4228223933158
+Part 170 entered the system as information at 1568.4228223933158
+Part 171 entered the system as information at 1568.4228223933158
+Part 172 entered the system as information at 1568.4228223933158
+Part 173 entered the system as information at 1568.4228223933158
+Part 130, entered buffer2 at  1575.4049505927144
+Part 131, started being processed on Machine1 at  1575.4049505927144
+Part 128, Exited the production system at  1576.6725640191974
+Part 129, started being processed on Machine2 at  1576.6725640191974
+Part 131, entered buffer2 at  1583.8524512324127
+Part 132, started being processed on Machine1 at  1583.8524512324127
+Part 174 entered the system as information at 1588.9190103865897
+Part 129, Exited the production system at  1589.6606660267119
+Part 130, started being processed on Machine2 at  1589.6606660267119
+Part 132, entered buffer2 at  1603.6316372349336
+Part 133, started being processed on Machine1 at  1603.6316372349336
+Part 175 entered the system as information at 1604.787409180579
+Part 133, entered buffer2 at  1606.2909811130648
+Part 130, Exited the production system at  1608.4895389791616
+Part 131, started being processed on Machine2 at  1608.4895389791616
+Part 134, released into production at 1620
+Part 134, entered Buffer 1 at  1620
+Part 134, started being processed on Machine1 at  1620
+Part 135, released into production at 1620
+Part 135, entered Buffer 1 at  1620
+Part 136, released into production at 1620
+Part 136, entered Buffer 1 at  1620
+Part 137, released into production at 1620
+Part 137, entered Buffer 1 at  1620
+Part 131, Exited the production system at  1624.4616126191554
+Part 138, released into production at 1624.4616126191554
+Part 138, entered Buffer 1 at  1624.4616126191554
+Part 132, started being processed on Machine2 at  1624.4616126191554
+Part 176 entered the system as information at 1626.162260274738
+Part 134, entered buffer2 at  1626.5652682123234
+Part 135, started being processed on Machine1 at  1626.5652682123234
+Part 132, Exited the production system at  1632.1892597744045
+Part 139, released into production at 1632.1892597744045
+Part 139, entered Buffer 1 at  1632.1892597744045
+Part 133, started being processed on Machine2 at  1632.1892597744045
+Part 135, entered buffer2 at  1636.8912299825488
+Part 136, started being processed on Machine1 at  1636.8912299825488
+Part 177 entered the system as information at 1639.7835330421376
+Part 178 entered the system as information at 1639.7835330421376
+Part 133, Exited the production system at  1645.353204577999
+Part 140, released into production at 1645.353204577999
+Part 140, entered Buffer 1 at  1645.353204577999
+Part 134, started being processed on Machine2 at  1645.353204577999
+Part 134, Exited the production system at  1647.941049658487
+Part 141, released into production at 1647.941049658487
+Part 141, entered Buffer 1 at  1647.941049658487
+Part 135, started being processed on Machine2 at  1647.941049658487
+Part 135, Exited the production system at  1650.3417553460038
+Part 179 entered the system as information at 1653.4490859730313
+Part 180 entered the system as information at 1653.4490859730313
+Part 181 entered the system as information at 1653.4490859730313
+Part 182 entered the system as information at 1653.4490859730313
+Part 183 entered the system as information at 1653.4490859730313
+Part 136, entered buffer2 at  1655.7639985991364
+Part 136, started being processed on Machine2 at  1655.7639985991364
+Part 137, started being processed on Machine1 at  1655.7639985991364
+Part 184 entered the system as information at 1656.873421838022
+Part 185 entered the system as information at 1656.873421838022
+Part 186 entered the system as information at 1656.873421838022
+Part 187 entered the system as information at 1656.873421838022
+Part 136, Exited the production system at  1662.4656871155662
+Part 188 entered the system as information at 1670.1037634903091
+Part 137, entered buffer2 at  1671.4921416951317
+Part 137, started being processed on Machine2 at  1671.4921416951317
+Part 138, started being processed on Machine1 at  1671.4921416951317
+Part 138, entered buffer2 at  1677.2540552668793
+Part 139, started being processed on Machine1 at  1677.2540552668793
+Part 137, Exited the production system at  1687.117651565746
+Part 138, started being processed on Machine2 at  1687.117651565746
+Part 138, Exited the production system at  1688.2804239948582
+Part 139, entered buffer2 at  1696.7224057954188
+Part 139, started being processed on Machine2 at  1696.7224057954188
+Part 140, started being processed on Machine1 at  1696.7224057954188
+Part 140, entered buffer2 at  1705.8198881619453
+Part 141, started being processed on Machine1 at  1705.8198881619453
+Part 139, Exited the production system at  1707.6863489350283
+Part 140, started being processed on Machine2 at  1707.6863489350283
+Part 189 entered the system as information at 1708.957264819586
+Part 140, Exited the production system at  1715.2748142239739
+Part 141, entered buffer2 at  1721.8791304184042
+Part 141, started being processed on Machine2 at  1721.8791304184042
+Part 141, Exited the production system at  1739.7924848496914
+Part 142, released into production at 1740
+Part 142, entered Buffer 1 at  1740
+Part 142, started being processed on Machine1 at  1740
+Part 143, released into production at 1740
+Part 143, entered Buffer 1 at  1740
+Part 144, released into production at 1740
+Part 144, entered Buffer 1 at  1740
+Part 145, released into production at 1740
+Part 145, entered Buffer 1 at  1740
+Part 146, released into production at 1740
+Part 146, entered Buffer 1 at  1740
+Part 147, released into production at 1740
+Part 147, entered Buffer 1 at  1740
+Part 148, released into production at 1740
+Part 148, entered Buffer 1 at  1740
+Part 149, released into production at 1740
+Part 149, entered Buffer 1 at  1740
+Part 150, released into production at 1740
+Part 150, entered Buffer 1 at  1740
+Part 151, released into production at 1740
+Part 151, entered Buffer 1 at  1740
+Part 152, released into production at 1740
+Part 152, entered Buffer 1 at  1740
+Part 153, released into production at 1740
+Part 153, entered Buffer 1 at  1740
+Part 142, entered buffer2 at  1746.7099008357818
+Part 142, started being processed on Machine2 at  1746.7099008357818
+Part 143, started being processed on Machine1 at  1746.7099008357818
+Part 190 entered the system as information at 1747.6584609302915
+Part 191 entered the system as information at 1747.6584609302915
+Part 192 entered the system as information at 1751.0398176377937
+Part 143, entered buffer2 at  1759.0409709539204
+Part 144, started being processed on Machine1 at  1759.0409709539204
+Part 142, Exited the production system at  1763.8074518288947
+Part 154, released into production at 1763.8074518288947
+Part 154, entered Buffer 1 at  1763.8074518288947
+Part 143, started being processed on Machine2 at  1763.8074518288947
+Part 193 entered the system as information at 1766.9932058749248
+Part 143, Exited the production system at  1768.2529771717066
+Part 155, released into production at 1768.2529771717066
+Part 155, entered Buffer 1 at  1768.2529771717066
+Part 144, entered buffer2 at  1768.8465677721101
+Part 144, started being processed on Machine2 at  1768.8465677721101
+Part 145, started being processed on Machine1 at  1768.8465677721101
+Part 144, Exited the production system at  1768.9296009829875
+Part 156, released into production at 1768.9296009829875
+Part 156, entered Buffer 1 at  1768.9296009829875
+Part 145, entered buffer2 at  1774.5890807372516
+Part 145, started being processed on Machine2 at  1774.5890807372516
+Part 146, started being processed on Machine1 at  1774.5890807372516
+Part 146, entered buffer2 at  1780.8272225187766
+Part 147, started being processed on Machine1 at  1780.8272225187766
+Part 145, Exited the production system at  1787.087258212611
+Part 146, started being processed on Machine2 at  1787.087258212611
+Part 147, entered buffer2 at  1790.8920006245398
+Part 148, started being processed on Machine1 at  1790.8920006245398
+Part 146, Exited the production system at  1802.872632039895
+Part 147, started being processed on Machine2 at  1802.872632039895
+Part 148, entered buffer2 at  1810.0024187777365
+Part 149, started being processed on Machine1 at  1810.0024187777365
+Part 194 entered the system as information at 1810.449779291261
+Part 195 entered the system as information at 1810.449779291261
+Part 196 entered the system as information at 1810.449779291261
+Part 147, Exited the production system at  1814.271954417425
+Part 148, started being processed on Machine2 at  1814.271954417425
+Part 149, entered buffer2 at  1815.64836647547
+Part 150, started being processed on Machine1 at  1815.64836647547
+Part 197 entered the system as information at 1829.3949714962198
+Part 198 entered the system as information at 1829.3949714962198
+Part 199 entered the system as information at 1829.3949714962198
+Part 148, Exited the production system at  1832.0673249539564
+Part 149, started being processed on Machine2 at  1832.0673249539564
+Part 150, entered buffer2 at  1833.841102566374
+Part 151, started being processed on Machine1 at  1833.841102566374
+Part 149, Exited the production system at  1837.3977206581035
+Part 150, started being processed on Machine2 at  1837.3977206581035
+Part 150, Exited the production system at  1840.4356883623886
+Part 151, entered buffer2 at  1844.0677840914586
+Part 151, started being processed on Machine2 at  1844.0677840914586
+Part 152, started being processed on Machine1 at  1844.0677840914586
+Part 200 entered the system as information at 1848.7592861354635
+Part 151, Exited the production system at  1849.7843975143771
+Part 152, entered buffer2 at  1854.2946427441245
+Part 152, started being processed on Machine2 at  1854.2946427441245
+Part 153, started being processed on Machine1 at  1854.2946427441245
+Part 201 entered the system as information at 1854.3788957093745
+Part 202 entered the system as information at 1854.3788957093745
+Part 152, Exited the production system at  1855.2330070608423
+Part 153, entered buffer2 at  1862.6031722450439
+Part 153, started being processed on Machine2 at  1862.6031722450439
+Part 154, started being processed on Machine1 at  1862.6031722450439
+Part 203 entered the system as information at 1871.322815267671
+Part 204 entered the system as information at 1871.322815267671
+Part 153, Exited the production system at  1872.0170527351281
+Part 154, entered buffer2 at  1877.3473922565104
+Part 154, started being processed on Machine2 at  1877.3473922565104
+Part 155, started being processed on Machine1 at  1877.3473922565104
+Part 155, entered buffer2 at  1883.2535128097502
+Part 156, started being processed on Machine1 at  1883.2535128097502
+Part 205 entered the system as information at 1883.9050178852483
+Part 206 entered the system as information at 1883.9050178852483
+Part 154, Exited the production system at  1896.4764091425013
+Part 155, started being processed on Machine2 at  1896.4764091425013
+Part 207 entered the system as information at 1900.0589202993447
+Part 208 entered the system as information at 1900.0589202993447
+Part 209 entered the system as information at 1900.0589202993447
+Part 156, entered buffer2 at  1902.7372164810695
+Part 155, Exited the production system at  1916.44812735178
+Part 156, started being processed on Machine2 at  1916.44812735178
+Part 157, released into production at 1920
+Part 157, entered Buffer 1 at  1920
+Part 158, released into production at 1920
+Part 158, entered Buffer 1 at  1920
+Part 157, started being processed on Machine1 at  1920
+Part 159, released into production at 1920
+Part 159, entered Buffer 1 at  1920
+Part 160, released into production at 1920
+Part 160, entered Buffer 1 at  1920
+Part 161, released into production at 1920
+Part 161, entered Buffer 1 at  1920
+Part 162, released into production at 1920
+Part 162, entered Buffer 1 at  1920
+Part 163, released into production at 1920
+Part 163, entered Buffer 1 at  1920
+Part 164, released into production at 1920
+Part 164, entered Buffer 1 at  1920
+Part 165, released into production at 1920
+Part 165, entered Buffer 1 at  1920
+Part 166, released into production at 1920
+Part 166, entered Buffer 1 at  1920
+Part 167, released into production at 1920
+Part 167, entered Buffer 1 at  1920
+Part 168, released into production at 1920
+Part 168, entered Buffer 1 at  1920
+Part 169, released into production at 1920
+Part 169, entered Buffer 1 at  1920
+Part 170, released into production at 1920
+Part 170, entered Buffer 1 at  1920
+Part 171, released into production at 1920
+Part 171, entered Buffer 1 at  1920
+Part 172, released into production at 1920
+Part 172, entered Buffer 1 at  1920
+Part 173, released into production at 1920
+Part 173, entered Buffer 1 at  1920
+Part 210 entered the system as information at 1924.3320968009482
+Part 157, entered buffer2 at  1925.0033767620448
+Part 158, started being processed on Machine1 at  1925.0033767620448
+Part 156, Exited the production system at  1935.6966832946596
+Part 174, released into production at 1935.6966832946596
+Part 174, entered Buffer 1 at  1935.6966832946596
+Part 157, started being processed on Machine2 at  1935.6966832946596
+Part 158, entered buffer2 at  1938.5324853935049
+Part 159, started being processed on Machine1 at  1938.5324853935049
+Part 157, Exited the production system at  1940.8451610494712
+Part 175, released into production at 1940.8451610494712
+Part 175, entered Buffer 1 at  1940.8451610494712
+Part 158, started being processed on Machine2 at  1940.8451610494712
+Part 158, Exited the production system at  1943.9131194843253
+Part 176, released into production at 1943.9131194843253
+Part 176, entered Buffer 1 at  1943.9131194843253
+Part 159, entered buffer2 at  1949.4876763822892
+Part 159, started being processed on Machine2 at  1949.4876763822892
+Part 160, started being processed on Machine1 at  1949.4876763822892
+Part 211 entered the system as information at 1952.961734213398
+Part 212 entered the system as information at 1952.961734213398
+Part 160, entered buffer2 at  1958.1495514849355
+Part 161, started being processed on Machine1 at  1958.1495514849355
+Part 161, entered buffer2 at  1960.2536979368979
+Part 162, started being processed on Machine1 at  1960.2536979368979
+Part 213 entered the system as information at 1962.7730414709708
+Part 159, Exited the production system at  1964.088224589678
+Part 160, started being processed on Machine2 at  1964.088224589678
+Part 162, entered buffer2 at  1970.872059460123
+Part 163, started being processed on Machine1 at  1970.872059460123
+Part 163, entered buffer2 at  1980.8649832993865
+Part 164, started being processed on Machine1 at  1980.8649832993865
+Part 160, Exited the production system at  1981.3817138469315
+Part 161, started being processed on Machine2 at  1981.3817138469315
+Part 161, Exited the production system at  1983.7759240930027
+Part 162, started being processed on Machine2 at  1983.7759240930027
+Part 214 entered the system as information at 1990.3736048998906
+Part 164, entered buffer2 at  1993.6810546270103
+Part 165, started being processed on Machine1 at  1993.6810546270103
+Part 162, Exited the production system at  2000.4103794731031
+Part 163, started being processed on Machine2 at  2000.4103794731031
+Part 163, Exited the production system at  2006.2514007059508
+Part 164, started being processed on Machine2 at  2006.2514007059508
+Part 215 entered the system as information at 2007.5732067888819
+Part 165, entered buffer2 at  2011.0804118079002
+Part 166, started being processed on Machine1 at  2011.0804118079002
+Part 166, entered buffer2 at  2013.8787821845415
+Part 167, started being processed on Machine1 at  2013.8787821845415
+Part 216 entered the system as information at 2016.4365404056225
+Part 217 entered the system as information at 2016.4365404056225
+Part 164, Exited the production system at  2023.5827436852157
+Part 165, started being processed on Machine2 at  2023.5827436852157
+Part 167, entered buffer2 at  2023.9870301806661
+Part 168, started being processed on Machine1 at  2023.9870301806661
+Part 165, Exited the production system at  2024.0893572244645
+Part 166, started being processed on Machine2 at  2024.0893572244645
+Part 168, entered buffer2 at  2030.9479172655306
+Part 169, started being processed on Machine1 at  2030.9479172655306
+Part 166, Exited the production system at  2033.2733726821116
+Part 167, started being processed on Machine2 at  2033.2733726821116
+Part 169, entered buffer2 at  2034.2928903524069
+Part 170, started being processed on Machine1 at  2034.2928903524069
+Part 170, entered buffer2 at  2041.4801908085258
+Part 171, started being processed on Machine1 at  2041.4801908085258
+Part 167, Exited the production system at  2045.5430303973528
+Part 168, started being processed on Machine2 at  2045.5430303973528
+Part 218 entered the system as information at 2053.093339158156
+Part 219 entered the system as information at 2053.093339158156
+Part 220 entered the system as information at 2053.093339158156
+Part 168, Exited the production system at  2054.332175147178
+Part 169, started being processed on Machine2 at  2054.332175147178
+Part 171, entered buffer2 at  2060.252515497147
+Part 172, started being processed on Machine1 at  2060.252515497147
+Part 169, Exited the production system at  2062.1593483125907
+Part 170, started being processed on Machine2 at  2062.1593483125907
+Part 172, entered buffer2 at  2063.2369296013885
+Part 173, started being processed on Machine1 at  2063.2369296013885
+Part 170, Exited the production system at  2070.7460478907183
+Part 171, started being processed on Machine2 at  2070.7460478907183
+Part 221 entered the system as information at 2071.5891261985103
+Part 171, Exited the production system at  2072.9715479274646
+Part 172, started being processed on Machine2 at  2072.9715479274646
+Part 172, Exited the production system at  2074.94210684681
+Part 173, entered buffer2 at  2078.2367263815113
+Part 173, started being processed on Machine2 at  2078.2367263815113
+Part 174, started being processed on Machine1 at  2078.2367263815113
+Part 174, entered buffer2 at  2078.5068411930197
+Part 175, started being processed on Machine1 at  2078.5068411930197
+Part 222 entered the system as information at 2083.1987489919047
+Part 223 entered the system as information at 2083.1987489919047
+Part 224 entered the system as information at 2083.1987489919047
+Part 173, Exited the production system at  2083.7712303718067
+Part 174, started being processed on Machine2 at  2083.7712303718067
+Part 175, entered buffer2 at  2093.5144824749973
+Part 176, started being processed on Machine1 at  2093.5144824749973
+Part 174, Exited the production system at  2095.473197535802
+Part 175, started being processed on Machine2 at  2095.473197535802
+Part 176, entered buffer2 at  2099.984606568533
+Part 175, Exited the production system at  2112.733077365293
+Part 176, started being processed on Machine2 at  2112.733077365293
+Part 225 entered the system as information at 2115.473729583489
+Part 226 entered the system as information at 2115.473729583489
+Part 227 entered the system as information at 2115.473729583489
+Part 176, Exited the production system at  2126.1056832584723
+Part 177, released into production at 2130
+Part 177, entered Buffer 1 at  2130
+Part 177, started being processed on Machine1 at  2130
+Part 178, released into production at 2130
+Part 178, entered Buffer 1 at  2130
+Part 179, released into production at 2130
+Part 179, entered Buffer 1 at  2130
+Part 180, released into production at 2130
+Part 180, entered Buffer 1 at  2130
+Part 181, released into production at 2130
+Part 181, entered Buffer 1 at  2130
+Part 182, released into production at 2130
+Part 182, entered Buffer 1 at  2130
+Part 183, released into production at 2130
+Part 183, entered Buffer 1 at  2130
+Part 184, released into production at 2130
+Part 184, entered Buffer 1 at  2130
+Part 185, released into production at 2130
+Part 185, entered Buffer 1 at  2130
+Part 186, released into production at 2130
+Part 186, entered Buffer 1 at  2130
+Part 187, released into production at 2130
+Part 187, entered Buffer 1 at  2130
+Part 188, released into production at 2130
+Part 188, entered Buffer 1 at  2130
+Part 189, released into production at 2130
+Part 189, entered Buffer 1 at  2130
+Part 190, released into production at 2130
+Part 190, entered Buffer 1 at  2130
+Part 191, released into production at 2130
+Part 191, entered Buffer 1 at  2130
+Part 192, released into production at 2130
+Part 192, entered Buffer 1 at  2130
+Part 193, released into production at 2130
+Part 193, entered Buffer 1 at  2130
+Part 194, released into production at 2130
+Part 194, entered Buffer 1 at  2130
+Part 195, released into production at 2130
+Part 195, entered Buffer 1 at  2130
+Part 196, released into production at 2130
+Part 196, entered Buffer 1 at  2130
+Part 197, released into production at 2130
+Part 197, entered Buffer 1 at  2130
+Part 198, released into production at 2130
+Part 198, entered Buffer 1 at  2130
+Part 199, released into production at 2130
+Part 199, entered Buffer 1 at  2130
+Part 200, released into production at 2130
+Part 200, entered Buffer 1 at  2130
+Part 201, released into production at 2130
+Part 201, entered Buffer 1 at  2130
+Part 202, released into production at 2130
+Part 202, entered Buffer 1 at  2130
+Part 203, released into production at 2130
+Part 203, entered Buffer 1 at  2130
+Part 204, released into production at 2130
+Part 204, entered Buffer 1 at  2130
+Part 205, released into production at 2130
+Part 205, entered Buffer 1 at  2130
+Part 206, released into production at 2130
+Part 206, entered Buffer 1 at  2130
+Part 207, released into production at 2130
+Part 207, entered Buffer 1 at  2130
+Part 208, released into production at 2130
+Part 208, entered Buffer 1 at  2130
+Part 209, released into production at 2130
+Part 209, entered Buffer 1 at  2130
+Part 210, released into production at 2130
+Part 210, entered Buffer 1 at  2130
+Part 211, released into production at 2130
+Part 211, entered Buffer 1 at  2130
+Part 212, released into production at 2130
+Part 212, entered Buffer 1 at  2130
+Part 213, released into production at 2130
+Part 213, entered Buffer 1 at  2130
+Part 214, released into production at 2130
+Part 214, entered Buffer 1 at  2130
+Part 215, released into production at 2130
+Part 215, entered Buffer 1 at  2130
+Part 216, released into production at 2130
+Part 216, entered Buffer 1 at  2130
+Part 217, released into production at 2130
+Part 217, entered Buffer 1 at  2130
+Part 218, released into production at 2130
+Part 218, entered Buffer 1 at  2130
+Part 219, released into production at 2130
+Part 219, entered Buffer 1 at  2130
+Part 220, released into production at 2130
+Part 220, entered Buffer 1 at  2130
+Part 221, released into production at 2130
+Part 221, entered Buffer 1 at  2130
+Part 222, released into production at 2130
+Part 222, entered Buffer 1 at  2130
+Part 228 entered the system as information at 2133.634209511724
+Part 177, entered buffer2 at  2143.0095585407435
+Part 177, started being processed on Machine2 at  2143.0095585407435
+Part 178, started being processed on Machine1 at  2143.0095585407435
+Part 229 entered the system as information at 2146.509873108189
+Part 230 entered the system as information at 2146.509873108189
+Part 231 entered the system as information at 2149.1033149096966
+Part 178, entered buffer2 at  2156.3964220771823
+Part 179, started being processed on Machine1 at  2156.3964220771823
+Part 177, Exited the production system at  2159.6103165721674
+Part 223, released into production at 2159.6103165721674
+Part 223, entered Buffer 1 at  2159.6103165721674
+Part 178, started being processed on Machine2 at  2159.6103165721674
+Part 179, entered buffer2 at  2167.169064326175
+Part 180, started being processed on Machine1 at  2167.169064326175
+Part 232 entered the system as information at 2171.5039123524552
+Part 233 entered the system as information at 2172.704806446118
+Part 234 entered the system as information at 2174.677449565331
+Part 235 entered the system as information at 2174.677449565331
+Part 236 entered the system as information at 2174.677449565331
+Part 178, Exited the production system at  2177.1823005692154
+Part 179, started being processed on Machine2 at  2177.1823005692154
+Part 180, entered buffer2 at  2177.4664797732994
+Part 181, started being processed on Machine1 at  2177.4664797732994
+Part 179, Exited the production system at  2188.788576277807
+Part 180, started being processed on Machine2 at  2188.788576277807
+Part 180, Exited the production system at  2196.0737219637435
+Part 181, entered buffer2 at  2196.575574746654
+Part 181, started being processed on Machine2 at  2196.575574746654
+Part 182, started being processed on Machine1 at  2196.575574746654
+Part 181, Exited the production system at  2199.7233858778104
+Part 182, entered buffer2 at  2210.305989858394
+Part 182, started being processed on Machine2 at  2210.305989858394
+Part 183, started being processed on Machine1 at  2210.305989858394
+Part 182, Exited the production system at  2215.865488664223
+Part 237 entered the system as information at 2218.2896637695826
+Part 238 entered the system as information at 2219.6001255521137
+Part 239 entered the system as information at 2219.6001255521137
+Part 240 entered the system as information at 2225.601640092167
+Part 241 entered the system as information at 2225.601640092167
+Part 242 entered the system as information at 2225.601640092167
+Part 243 entered the system as information at 2225.601640092167
+Part 244 entered the system as information at 2225.601640092167
+Part 183, entered buffer2 at  2229.05430177263
+Part 183, started being processed on Machine2 at  2229.05430177263
+Part 184, started being processed on Machine1 at  2229.05430177263
+Part 184, entered buffer2 at  2229.366311847114
+Part 185, started being processed on Machine1 at  2229.366311847114
+Part 185, entered buffer2 at  2235.9782350430346
+Part 186, started being processed on Machine1 at  2235.9782350430346
+Part 245 entered the system as information at 2238.0020502124503
+Part 246 entered the system as information at 2238.0020502124503
+Part 183, Exited the production system at  2239.3514762478017
+Part 184, started being processed on Machine2 at  2239.3514762478017
+Part 186, entered buffer2 at  2247.4859388515397
+Part 187, started being processed on Machine1 at  2247.4859388515397
+Part 184, Exited the production system at  2252.786000560651
+Part 185, started being processed on Machine2 at  2252.786000560651
+Part 247 entered the system as information at 2256.976574245945
+Part 248 entered the system as information at 2256.976574245945
+Part 187, entered buffer2 at  2264.3170853861684
+Part 188, started being processed on Machine1 at  2264.3170853861684
+Part 185, Exited the production system at  2264.645989907976
+Part 186, started being processed on Machine2 at  2264.645989907976
+Part 249 entered the system as information at 2264.7338543294377
+Part 250 entered the system as information at 2264.7338543294377
+Part 251 entered the system as information at 2271.6803877729094
+Part 252 entered the system as information at 2271.6803877729094
+Part 253 entered the system as information at 2271.6803877729094
+Part 254 entered the system as information at 2271.6803877729094
+Part 255 entered the system as information at 2275.2422284932413
+Part 186, Exited the production system at  2281.457432719722
+Part 187, started being processed on Machine2 at  2281.457432719722
+Part 188, entered buffer2 at  2281.5802508080915
+Part 189, started being processed on Machine1 at  2281.5802508080915
+Part 187, Exited the production system at  2283.8021605901495
+Part 188, started being processed on Machine2 at  2283.8021605901495
+Part 189, entered buffer2 at  2284.713737151847
+Part 190, started being processed on Machine1 at  2284.713737151847
+Part 256 entered the system as information at 2292.8562929750133
+Part 257 entered the system as information at 2292.8562929750133
+Part 190, entered buffer2 at  2294.801426399383
+Part 191, started being processed on Machine1 at  2294.801426399383
+Part 188, Exited the production system at  2302.635904040869
+Part 189, started being processed on Machine2 at  2302.635904040869
+Part 189, Exited the production system at  2306.835863659687
+Part 190, started being processed on Machine2 at  2306.835863659687
+Part 191, entered buffer2 at  2308.221895281273
+Part 192, started being processed on Machine1 at  2308.221895281273
+Part 258 entered the system as information at 2309.2788707464347
+Part 190, Exited the production system at  2315.131892968326
+Part 191, started being processed on Machine2 at  2315.131892968326
+Part 191, Exited the production system at  2321.3186660971
+Part 192, entered buffer2 at  2326.6932846206405
+Part 192, started being processed on Machine2 at  2326.6932846206405
+Part 193, started being processed on Machine1 at  2326.6932846206405
+Part 193, entered buffer2 at  2332.639658132809
+Part 194, started being processed on Machine1 at  2332.639658132809
+Part 192, Exited the production system at  2334.882535260247
+Part 193, started being processed on Machine2 at  2334.882535260247
+Part 194, entered buffer2 at  2341.135348449152
+Part 195, started being processed on Machine1 at  2341.135348449152
+Part 259 entered the system as information at 2341.862287339987
+Part 260 entered the system as information at 2341.862287339987
+Part 261 entered the system as information at 2344.9870050204463
+Part 193, Exited the production system at  2350.5412103492577
+Part 194, started being processed on Machine2 at  2350.5412103492577
+Part 194, Exited the production system at  2352.463835019921
+Part 262 entered the system as information at 2356.467333076258
+Part 195, entered buffer2 at  2359.772561120406
+Part 195, started being processed on Machine2 at  2359.772561120406
+Part 196, started being processed on Machine1 at  2359.772561120406
+Part 195, Exited the production system at  2366.994275340568
+Part 196, entered buffer2 at  2372.2361593617816
+Part 196, started being processed on Machine2 at  2372.2361593617816
+Part 197, started being processed on Machine1 at  2372.2361593617816
+Part 197, entered buffer2 at  2378.7703099374667
+Part 198, started being processed on Machine1 at  2378.7703099374667
+Part 196, Exited the production system at  2385.749082319587
+Part 197, started being processed on Machine2 at  2385.749082319587
+Part 197, Exited the production system at  2390.308858066822
+Part 263 entered the system as information at 2395.651046750028
+Part 264 entered the system as information at 2395.651046750028
+Part 198, entered buffer2 at  2395.7771197801444
+Part 198, started being processed on Machine2 at  2395.7771197801444
+Part 199, started being processed on Machine1 at  2395.7771197801444
+Part 199, entered buffer2 at  2397.513235052643
+Part 200, started being processed on Machine1 at  2397.513235052643
+Part 198, Exited the production system at  2399.181222769986
+Part 199, started being processed on Machine2 at  2399.181222769986
+Part 265 entered the system as information at 2403.2011333828423
+Part 199, Exited the production system at  2404.165315754855
+Part 200, entered buffer2 at  2411.8067811048472
+Part 200, started being processed on Machine2 at  2411.8067811048472
+Part 201, started being processed on Machine1 at  2411.8067811048472
+Part 266 entered the system as information at 2412.1523955510747
+Part 267 entered the system as information at 2412.1523955510747
+Part 268 entered the system as information at 2413.4262075676093
+Part 269 entered the system as information at 2413.4262075676093
+Part 270 entered the system as information at 2413.4262075676093
+Part 201, entered buffer2 at  2413.8757635151064
+Part 202, started being processed on Machine1 at  2413.8757635151064
+Part 271 entered the system as information at 2424.789776916657
+Part 272 entered the system as information at 2424.789776916657
+Part 202, entered buffer2 at  2425.024223175238
+Part 203, started being processed on Machine1 at  2425.024223175238
+Part 200, Exited the production system at  2429.640510485271
+Part 201, started being processed on Machine2 at  2429.640510485271
+Part 273 entered the system as information at 2435.002643085329
+Part 274 entered the system as information at 2435.002643085329
+Part 275 entered the system as information at 2435.002643085329
+Part 276 entered the system as information at 2435.002643085329
+Part 277 entered the system as information at 2435.002643085329
+Part 278 entered the system as information at 2435.002643085329
+Part 279 entered the system as information at 2435.002643085329
+Part 203, entered buffer2 at  2438.8349058782187
+Part 204, started being processed on Machine1 at  2438.8349058782187
+Part 204, entered buffer2 at  2439.0351414956936
+Part 205, started being processed on Machine1 at  2439.0351414956936
+Part 201, Exited the production system at  2440.5398784812114
+Part 202, started being processed on Machine2 at  2440.5398784812114
+Part 202, Exited the production system at  2446.5431416004503
+Part 203, started being processed on Machine2 at  2446.5431416004503
+Part 205, entered buffer2 at  2446.9644658273646
+Part 206, started being processed on Machine1 at  2446.9644658273646
+Part 206, entered buffer2 at  2451.799272404999
+Part 207, started being processed on Machine1 at  2451.799272404999
+Part 207, entered buffer2 at  2455.8816488598063
+Part 208, started being processed on Machine1 at  2455.8816488598063
+Part 280 entered the system as information at 2459.447546184066
+Part 208, entered buffer2 at  2461.0615747470238
+Part 209, started being processed on Machine1 at  2461.0615747470238
+Part 203, Exited the production system at  2465.362336446411
+Part 204, started being processed on Machine2 at  2465.362336446411
+Part 209, entered buffer2 at  2474.194045727173
+Part 210, started being processed on Machine1 at  2474.194045727173
+Part 281 entered the system as information at 2474.636851080938
+Part 282 entered the system as information at 2474.636851080938
+Part 283 entered the system as information at 2474.636851080938
+Part 284 entered the system as information at 2474.636851080938
+Part 285 entered the system as information at 2474.636851080938
+Part 210, entered buffer2 at  2476.529446531548
+Part 211, started being processed on Machine1 at  2476.529446531548
+Part 211, entered buffer2 at  2480.312397821367
+Part 212, started being processed on Machine1 at  2480.312397821367
+Part 204, Exited the production system at  2480.7323388102377
+Part 205, started being processed on Machine2 at  2480.7323388102377
+Part 205, Exited the production system at  2491.0050083803594
+Part 206, started being processed on Machine2 at  2491.0050083803594
+Part 212, entered buffer2 at  2492.540365915934
+Part 213, started being processed on Machine1 at  2492.540365915934
+Part 206, Exited the production system at  2498.798477297453
+Part 207, started being processed on Machine2 at  2498.798477297453
+Part 213, entered buffer2 at  2498.9704596599804
+Part 214, started being processed on Machine1 at  2498.9704596599804
+Part 214, entered buffer2 at  2513.113415835208
+Part 215, started being processed on Machine1 at  2513.113415835208
+Part 207, Exited the production system at  2516.437612617489
+Part 208, started being processed on Machine2 at  2516.437612617489
+Part 286 entered the system as information at 2519.6397557661035
+Part 287 entered the system as information at 2519.6397557661035
+Part 208, Exited the production system at  2520.791252111267
+Part 209, started being processed on Machine2 at  2520.791252111267
+Part 215, entered buffer2 at  2521.473361283248
+Part 216, started being processed on Machine1 at  2521.473361283248
+Part 209, Exited the production system at  2532.506563846689
+Part 210, started being processed on Machine2 at  2532.506563846689
+Part 216, entered buffer2 at  2536.5001767946756
+Part 217, started being processed on Machine1 at  2536.5001767946756
+Part 288 entered the system as information at 2536.926007596976
+Part 289 entered the system as information at 2536.926007596976
+Part 210, Exited the production system at  2543.975502396056
+Part 211, started being processed on Machine2 at  2543.975502396056
+Part 290 entered the system as information at 2546.459875368089
+Part 217, entered buffer2 at  2552.496769846167
+Part 218, started being processed on Machine1 at  2552.496769846167
+Part 211, Exited the production system at  2558.822085054338
+Part 212, started being processed on Machine2 at  2558.822085054338
+Part 218, entered buffer2 at  2566.5909894530037
+Part 219, started being processed on Machine1 at  2566.5909894530037
+Part 219, entered buffer2 at  2570.677640427716
+Part 220, started being processed on Machine1 at  2570.677640427716
+Part 291 entered the system as information at 2573.323941124858
+Part 292 entered the system as information at 2573.323941124858
+Part 293 entered the system as information at 2573.323941124858
+Part 212, Exited the production system at  2576.4490024934994
+Part 213, started being processed on Machine2 at  2576.4490024934994
+Part 220, entered buffer2 at  2587.4289922383405
+Part 221, started being processed on Machine1 at  2587.4289922383405
+Part 213, Exited the production system at  2593.7252730266573
+Part 214, started being processed on Machine2 at  2593.7252730266573
+Part 221, entered buffer2 at  2593.804348662403
+Part 222, started being processed on Machine1 at  2593.804348662403
+Part 214, Exited the production system at  2596.2592546964934
+Part 215, started being processed on Machine2 at  2596.2592546964934
+Part 294 entered the system as information at 2598.7120907968488
+Part 295 entered the system as information at 2598.7120907968488
+Part 296 entered the system as information at 2598.7120907968488
+Part 297 entered the system as information at 2598.7120907968488
+Part 298 entered the system as information at 2598.7120907968488
+Part 215, Exited the production system at  2601.78351173189
+Part 216, started being processed on Machine2 at  2601.78351173189
+Part 222, entered buffer2 at  2609.207969732787
+Part 223, started being processed on Machine1 at  2609.207969732787
+Part 216, Exited the production system at  2611.8846732194197
+Part 217, started being processed on Machine2 at  2611.8846732194197
+Part 299 entered the system as information at 2613.5952276651406
+Part 300 entered the system as information at 2613.5952276651406
+Part 301 entered the system as information at 2613.5952276651406
+Part 302 entered the system as information at 2613.5952276651406
+Part 217, Exited the production system at  2614.4644452593147
+Part 218, started being processed on Machine2 at  2614.4644452593147
+Part 223, entered buffer2 at  2617.7650004208463
+Part 218, Exited the production system at  2620.5324312514454
+Part 219, started being processed on Machine2 at  2620.5324312514454
+Part 219, Exited the production system at  2631.9674502587527
+Part 220, started being processed on Machine2 at  2631.9674502587527
+Part 303 entered the system as information at 2635.3963776922146
+Part 220, Exited the production system at  2642.5666510668566
+Part 221, started being processed on Machine2 at  2642.5666510668566
+Part 304 entered the system as information at 2648.2633779340736
+Part 221, Exited the production system at  2653.6899506507348
+Part 222, started being processed on Machine2 at  2653.6899506507348
+Part 305 entered the system as information at 2668.9636135081055
+Part 306 entered the system as information at 2668.9636135081055
+Part 224, released into production at 2670
+Part 224, entered Buffer 1 at  2670
+Part 225, released into production at 2670
+Part 225, entered Buffer 1 at  2670
+Part 226, released into production at 2670
+Part 226, entered Buffer 1 at  2670
+Part 224, started being processed on Machine1 at  2670
+Part 227, released into production at 2670
+Part 227, entered Buffer 1 at  2670
+Part 228, released into production at 2670
+Part 228, entered Buffer 1 at  2670
+Part 229, released into production at 2670
+Part 229, entered Buffer 1 at  2670
+Part 230, released into production at 2670
+Part 230, entered Buffer 1 at  2670
+Part 222, Exited the production system at  2670.917065059324
+Part 231, released into production at 2670.917065059324
+Part 231, entered Buffer 1 at  2670.917065059324
+Part 223, started being processed on Machine2 at  2670.917065059324
+Part 223, Exited the production system at  2672.8923286175
+Part 232, released into production at 2672.8923286175
+Part 232, entered Buffer 1 at  2672.8923286175
+Part 307 entered the system as information at 2682.399192109479
+Part 308 entered the system as information at 2682.399192109479
+Part 309 entered the system as information at 2682.399192109479
+Part 310 entered the system as information at 2682.7971127114724
+Part 224, entered buffer2 at  2683.5608529003935
+Part 224, started being processed on Machine2 at  2683.5608529003935
+Part 225, started being processed on Machine1 at  2683.5608529003935
+Part 225, entered buffer2 at  2686.554868720929
+Part 226, started being processed on Machine1 at  2686.554868720929
+Part 224, Exited the production system at  2687.3144965925417
+Part 233, released into production at 2687.3144965925417
+Part 233, entered Buffer 1 at  2687.3144965925417
+Part 225, started being processed on Machine2 at  2687.3144965925417
+Part 311 entered the system as information at 2698.234831935257
+Part 312 entered the system as information at 2700.390155198199
+Part 313 entered the system as information at 2700.390155198199
+Part 314 entered the system as information at 2700.390155198199
+Part 226, entered buffer2 at  2704.172034463737
+Part 227, started being processed on Machine1 at  2704.172034463737
+Part 315 entered the system as information at 2704.8059042992463
+Part 316 entered the system as information at 2704.8059042992463
+Part 225, Exited the production system at  2705.3455086871295
+Part 226, started being processed on Machine2 at  2705.3455086871295
+Part 317 entered the system as information at 2712.2183254998395
+Part 318 entered the system as information at 2712.2183254998395
+Part 226, Exited the production system at  2715.005032137416
+Part 227, entered buffer2 at  2719.7478248643115
+Part 227, started being processed on Machine2 at  2719.7478248643115
+Part 228, started being processed on Machine1 at  2719.7478248643115
+Part 227, Exited the production system at  2722.3224979485644
+Part 319 entered the system as information at 2726.475660527724
+Part 320 entered the system as information at 2726.475660527724
+Part 321 entered the system as information at 2726.475660527724
+Part 228, entered buffer2 at  2735.820150026724
+Part 228, started being processed on Machine2 at  2735.820150026724
+Part 229, started being processed on Machine1 at  2735.820150026724
+Part 228, Exited the production system at  2743.951362213394
+Part 322 entered the system as information at 2746.0940742460584
+Part 229, entered buffer2 at  2749.2172127956087
+Part 229, started being processed on Machine2 at  2749.2172127956087
+Part 230, started being processed on Machine1 at  2749.2172127956087
+Part 229, Exited the production system at  2754.494025928477
+Part 230, entered buffer2 at  2755.830784669214
+Part 230, started being processed on Machine2 at  2755.830784669214
+Part 231, started being processed on Machine1 at  2755.830784669214
+Part 230, Exited the production system at  2759.6720113873307
+Part 323 entered the system as information at 2769.243577686213
+Part 324 entered the system as information at 2769.243577686213
+Part 231, entered buffer2 at  2774.599360783005
+Part 231, started being processed on Machine2 at  2774.599360783005
+Part 232, started being processed on Machine1 at  2774.599360783005
+Part 325 entered the system as information at 2775.3346585651852
+Part 326 entered the system as information at 2775.3346585651852
+Part 327 entered the system as information at 2775.3346585651852
+Part 231, Exited the production system at  2784.3750111280515
+Part 328 entered the system as information at 2786.7389873247816
+Part 329 entered the system as information at 2786.7389873247816
+Part 232, entered buffer2 at  2790.5636503675464
+Part 232, started being processed on Machine2 at  2790.5636503675464
+Part 233, started being processed on Machine1 at  2790.5636503675464
+Part 233, entered buffer2 at  2793.72318793948
+Part 232, Exited the production system at  2800.3476425813606
+Part 233, started being processed on Machine2 at  2800.3476425813606
+Part 233, Exited the production system at  2805.998043109622
+Part 330 entered the system as information at 2809.1575679422785
+Part 331 entered the system as information at 2827.946538834774
+Part 332 entered the system as information at 2831.9292737432697
+Part 333 entered the system as information at 2840.034599070494
+Part 334 entered the system as information at 2840.034599070494
+Part 335 entered the system as information at 2840.034599070494
+Part 336 entered the system as information at 2840.034599070494
+Part 337 entered the system as information at 2840.034599070494
+Part 338 entered the system as information at 2840.034599070494
+Part 339 entered the system as information at 2857.4930595451633
+Part 340 entered the system as information at 2857.4930595451633
+Part 341 entered the system as information at 2857.4930595451633
+Part 342 entered the system as information at 2863.4029626995293
+Part 343 entered the system as information at 2863.4029626995293
+Part 344 entered the system as information at 2863.4029626995293
+Part 345 entered the system as information at 2863.4029626995293
+Part 346 entered the system as information at 2863.4029626995293
+Part 347 entered the system as information at 2863.4029626995293
+Part 348 entered the system as information at 2863.4029626995293
+Part 349 entered the system as information at 2863.9096166477607
+Part 350 entered the system as information at 2869.7940221261333
+Part 351 entered the system as information at 2882.5797256856963
+Part 352 entered the system as information at 2882.5797256856963
+Part 353 entered the system as information at 2882.5797256856963
+Part 354 entered the system as information at 2909.0898744831434
+Part 355 entered the system as information at 2909.0898744831434
+Part 356 entered the system as information at 2909.0898744831434
+Part 234, released into production at 2910
+Part 234, entered Buffer 1 at  2910
+Part 235, released into production at 2910
+Part 235, entered Buffer 1 at  2910
+Part 234, started being processed on Machine1 at  2910
+Part 236, released into production at 2910
+Part 236, entered Buffer 1 at  2910
+Part 237, released into production at 2910
+Part 237, entered Buffer 1 at  2910
+Part 238, released into production at 2910
+Part 238, entered Buffer 1 at  2910
+Part 239, released into production at 2910
+Part 239, entered Buffer 1 at  2910
+Part 240, released into production at 2910
+Part 240, entered Buffer 1 at  2910
+Part 241, released into production at 2910
+Part 241, entered Buffer 1 at  2910
+Part 242, released into production at 2910
+Part 242, entered Buffer 1 at  2910
+Part 243, released into production at 2910
+Part 243, entered Buffer 1 at  2910
+Part 234, entered buffer2 at  2929.5622081288075
+Part 234, started being processed on Machine2 at  2929.5622081288075
+Part 235, started being processed on Machine1 at  2929.5622081288075
+Part 234, Exited the production system at  2930.3634918783923
+Part 244, released into production at 2930.3634918783923
+Part 244, entered Buffer 1 at  2930.3634918783923
+Part 357 entered the system as information at 2937.477722160767
+Part 358 entered the system as information at 2946.8359684246266
+Part 235, entered buffer2 at  2949.0028150902795
+Part 235, started being processed on Machine2 at  2949.0028150902795
+Part 236, started being processed on Machine1 at  2949.0028150902795
+Part 235, Exited the production system at  2950.199093871821
+Part 359 entered the system as information at 2950.708677837822
+Part 360 entered the system as information at 2950.708677837822
+Part 236, entered buffer2 at  2956.691080372668
+Part 236, started being processed on Machine2 at  2956.691080372668
+Part 237, started being processed on Machine1 at  2956.691080372668
+Part 237, entered buffer2 at  2975.4866036950793
+Part 238, started being processed on Machine1 at  2975.4866036950793
+Part 236, Exited the production system at  2975.6871548027702
+Part 237, started being processed on Machine2 at  2975.6871548027702
+Part 361 entered the system as information at 2983.064355375517
+Part 237, Exited the production system at  2983.4308030733264
+Part 362 entered the system as information at 2986.293938440449
+Part 238, entered buffer2 at  2994.9075111790003
+Part 238, started being processed on Machine2 at  2994.9075111790003
+Part 239, started being processed on Machine1 at  2994.9075111790003
+Part 363 entered the system as information at 2995.995235420409
+Part 238, Exited the production system at  3001.85012236238
+Part 364 entered the system as information at 3002.4715499659105
+Part 365 entered the system as information at 3002.4715499659105
+Part 366 entered the system as information at 3002.4715499659105
+Part 239, entered buffer2 at  3006.641799668171
+Part 239, started being processed on Machine2 at  3006.641799668171
+Part 240, started being processed on Machine1 at  3006.641799668171
+Part 240, entered buffer2 at  3010.233027731694
+Part 241, started being processed on Machine1 at  3010.233027731694
+Part 241, entered buffer2 at  3014.5016356614337
+Part 242, started being processed on Machine1 at  3014.5016356614337
+Part 367 entered the system as information at 3019.553124787569
+Part 368 entered the system as information at 3019.553124787569
+Part 239, Exited the production system at  3021.3202573036237
+Part 240, started being processed on Machine2 at  3021.3202573036237
+Part 242, entered buffer2 at  3032.9623793633928
+Part 243, started being processed on Machine1 at  3032.9623793633928
+Part 240, Exited the production system at  3036.395565341927
+Part 241, started being processed on Machine2 at  3036.395565341927
+Part 243, entered buffer2 at  3046.364809815644
+Part 244, started being processed on Machine1 at  3046.364809815644
+Part 241, Exited the production system at  3051.0403989890274
+Part 242, started being processed on Machine2 at  3051.0403989890274
+Part 369 entered the system as information at 3053.4523219327884
+Part 242, Exited the production system at  3062.538848982336
+Part 243, started being processed on Machine2 at  3062.538848982336
+Part 244, entered buffer2 at  3063.690718405501
+Part 370 entered the system as information at 3070.3936083227964
+Part 243, Exited the production system at  3071.0919800336337
+Part 244, started being processed on Machine2 at  3071.0919800336337
+Part 371 entered the system as information at 3081.732995707785
+Part 372 entered the system as information at 3081.732995707785
+Part 244, Exited the production system at  3084.097418512837
+Part 245, released into production at 3090
+Part 245, entered Buffer 1 at  3090
+Part 246, released into production at 3090
+Part 246, entered Buffer 1 at  3090
+Part 247, released into production at 3090
+Part 247, entered Buffer 1 at  3090
+Part 245, started being processed on Machine1 at  3090
+Part 245, entered buffer2 at  3090.8618757367212
+Part 245, started being processed on Machine2 at  3090.8618757367212
+Part 246, started being processed on Machine1 at  3090.8618757367212
+Part 373 entered the system as information at 3095.4983177368676
+Part 374 entered the system as information at 3095.4983177368676
+Part 245, Exited the production system at  3097.6786233264334
+Part 248, released into production at 3097.6786233264334
+Part 248, entered Buffer 1 at  3097.6786233264334
+Part 246, entered buffer2 at  3098.1955865401137
+Part 246, started being processed on Machine2 at  3098.1955865401137
+Part 247, started being processed on Machine1 at  3098.1955865401137
+Simulation Finished

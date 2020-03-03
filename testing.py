@@ -80,20 +80,7 @@
     # print(f" rewards: {rewards.shape}")
     # print(f"qsa: {qsa}")
     # print(f" qsa: {qsa.shape}")
+import tensorflow as tf
 
+optimizer = tf.keras.optimizers.Adam(0.001, decay=0.01)
 
-from multiprocessing import Queue, Manager
-from multiprocessing.queues import Full
-
-if __name__ == "__main__":
-    queue = Manager().Queue(2)
-
-    for i in range(3):
-        try:
-            queue.put(1, block=True, timeout=1)
-        except Full as e: 
-            print("chingado")
-            raise e
-       
-        
-           
